@@ -68,3 +68,7 @@ const TAWAAF_DUAS = [
     urdu: ""
   }
 ];
+
+if (typeof module !== "undefined" && module.exports) {
+  module.exports = { TAWAAF_DUAS, YEMENI_CORNER_DUA };
+}
