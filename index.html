@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EasyUmrah — Tawaaf Duas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Nastaliq+Urdu:wght@400;600&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1 class="site-title">EasyUmrah</h1>
+    <div class="header-controls">
+      <div class="lang-toggle" role="group" aria-label="Translation language">
+        <button type="button" class="lang-btn active" data-lang="english">English</button>
+        <button type="button" class="lang-btn" data-lang="urdu">اردو</button>
+      </div>
+      <button
+        type="button"
+        id="theme-toggle"
+        class="theme-toggle"
+        aria-label="Toggle dark mode"
+        title="Toggle dark mode"
+      >
+        <span class="theme-icon">🌙</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="tawaaf-card" id="dua-view">
+      <div class="round-counter" aria-live="polite">
+        Round <span id="current-round">1</span> / 7
+      </div>
+
+      <div class="dua-content">
+        <p class="dua-arabic" id="dua-arabic" dir="rtl" lang="ar"></p>
+        <p class="dua-translation" id="dua-translation"></p>
+      </div>
+
+      <div class="nav-buttons">
+        <button type="button" id="prev-btn" class="nav-btn" disabled>
+          ← Previous
+        </button>
+        <button type="button" id="next-btn" class="nav-btn primary">
+          Next →
+        </button>
+      </div>
+    </section>
+
+    <section class="complete-card hidden" id="complete-view">
+      <div class="complete-icon">✓</div>
+      <h2 class="complete-title">Tawaaf Complete</h2>
+      <p class="complete-message">
+        May Allah accept your worship.
+      </p>
+      <button type="button" id="reset-btn" class="nav-btn primary">
+        Start Again
+      </button>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>EasyUmrah — a simple guide for pilgrims</p>
+  </footer>
+
+  <script src="data/tawaaf-duas.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
