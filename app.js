@@ -10,6 +10,8 @@
     currentRound: document.getElementById("current-round"),
     duaArabic: document.getElementById("dua-arabic"),
     duaTranslation: document.getElementById("dua-translation"),
+    cornerArabic: document.getElementById("corner-arabic"),
+    cornerTranslation: document.getElementById("corner-translation"),
     prevBtn: document.getElementById("prev-btn"),
     nextBtn: document.getElementById("next-btn"),
     resetBtn: document.getElementById("reset-btn"),
@@ -34,6 +36,12 @@
     });
   }
 
+  function applyTranslationLang(el) {
+    el.classList.toggle("urdu", state.language === "urdu");
+    el.setAttribute("lang", state.language === "urdu" ? "ur" : "en");
+    el.setAttribute("dir", state.language === "urdu" ? "rtl" : "ltr");
+  }
+
   function render() {
     const dua = TAWAAF_DUAS[state.round - 1];
     els.currentRound.textContent = state.round;
@@ -41,12 +49,13 @@
 
     const translation = state.language === "urdu" ? dua.urdu : dua.english;
     renderParagraphs(els.duaTranslation, translation);
-    els.duaTranslation.classList.toggle("urdu", state.language === "urdu");
-    els.duaTranslation.setAttribute("lang", state.language === "urdu" ? "ur" : "en");
-    els.duaTranslation.setAttribute(
-      "dir",
-      state.language === "urdu" ? "rtl" : "ltr"
-    );
+    applyTranslationLang(els.duaTranslation);
+
+    renderParagraphs(els.cornerArabic, YEMENI_CORNER_DUA.arabic);
+    const cornerTranslation =
+      state.language === "urdu" ? YEMENI_CORNER_DUA.urdu : YEMENI_CORNER_DUA.english;
+    renderParagraphs(els.cornerTranslation, cornerTranslation);
+    applyTranslationLang(els.cornerTranslation);
 
     els.prevBtn.disabled = state.round === 1;
     els.nextBtn.textContent = state.round === TOTAL_ROUNDS ? "Complete ✓" : "Next →";

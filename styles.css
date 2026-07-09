@@ -224,6 +224,52 @@ body {
   direction: rtl;
 }
 
+.corner-dua {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 2px dashed var(--border);
+  margin-bottom: 2rem;
+}
+
+.corner-dua-heading {
+  margin: 0 0 1rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  text-align: center;
+}
+
+.corner-arabic {
+  font-size: 1.55rem;
+  line-height: 1.9;
+  min-height: 0;
+}
+
+.corner-translation {
+  font-size: 0.95rem;
+}
+
+.corner-translation:not(:empty) {
+  border-top: none;
+  padding-top: 0.75rem;
+}
+
+.corner-translation.urdu {
+  font-size: 1.2rem;
+  line-height: 2;
+}
+
+@media (max-width: 480px) {
+  .corner-arabic {
+    font-size: 1.35rem;
+  }
+  .corner-translation.urdu {
+    font-size: 1.05rem;
+  }
+}
+
 .nav-buttons {
   display: flex;
   gap: 0.75rem;

@@ -2,6 +2,14 @@
 // Paragraphs within a dua are separated by a blank line (\n\n).
 // Fill in `urdu` later — it will show when the user selects the Urdu toggle.
 
+// Recited between the Yemeni Corner (Rukn Yamani) and the Black Stone
+// (Hajr-e-Aswad) on every round of tawaaf.
+const YEMENI_CORNER_DUA = {
+  arabic: `رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ ، وَأدْخِلْنَا الْجَنَّةَ مَعَ الْأبْرَاَرِ ، يَا عَزِيرُ يَا غَفَّارُ ، يَا رَبَّ الْعَالَمِينَ .`,
+  english: `Our Lord! Grant us good in this world and good in the Hereafter, and save us from the chastisement of fire, and allow us to enter Paradise with the righteous ones. O Glorious One! O All Forgiving! O Lord of the Universe!`,
+  urdu: ""
+};
+
 const TAWAAF_DUAS = [
   {
     round: 1,
