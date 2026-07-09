@@ -20,13 +20,27 @@
     themeIcon: document.querySelector(".theme-icon")
   };
 
+  function renderParagraphs(container, text) {
+    container.innerHTML = "";
+    if (!text) return;
+    const paragraphs = text
+      .split(/\n\s*\n/)
+      .map((p) => p.trim())
+      .filter(Boolean);
+    paragraphs.forEach((para) => {
+      const p = document.createElement("p");
+      p.textContent = para;
+      container.appendChild(p);
+    });
+  }
+
   function render() {
     const dua = TAWAAF_DUAS[state.round - 1];
     els.currentRound.textContent = state.round;
-    els.duaArabic.textContent = dua.arabic || "";
+    renderParagraphs(els.duaArabic, dua.arabic);
 
     const translation = state.language === "urdu" ? dua.urdu : dua.english;
-    els.duaTranslation.textContent = translation || "";
+    renderParagraphs(els.duaTranslation, translation);
     els.duaTranslation.classList.toggle("urdu", state.language === "urdu");
     els.duaTranslation.setAttribute("lang", state.language === "urdu" ? "ur" : "en");
     els.duaTranslation.setAttribute(
@@ -36,6 +50,7 @@
 
     els.prevBtn.disabled = state.round === 1;
     els.nextBtn.textContent = state.round === TOTAL_ROUNDS ? "Complete ✓" : "Next →";
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
   function goNext() {
