@@ -13,7 +13,7 @@ const YEMENI_CORNER_DUA = {
 const TAWAAF_DUAS = [
   {
     round: 1,
-    arabic: `سُبْحَانَ اللّهِ ، والْحَمْدُللّهِ ، وَ لا اِلهَ اِلَّا اللّهُ ، وَ اللّهُ اَكْبَرُ ، وَ لا حَوْلَ وَ لا قُوَّةَ اِلَّا بِاللّهِ الْعَلِىَّ الْعَضِيِم ، وَ الْصَّلِاةُ وَ السَّلَامُ عَلَى رَسُولِ اللهِ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ. اَللَّهُمَّ إِيْمَانًا بِكَ ، وَتَصْدِيقًا لِكِتَابِكَ ، وَ وَفَاءً بِعَهْدِكَ ، وَ اْتِّبَاعًا لِسُنَّتِهِ نَبِيِّكَ وَ حَبِيبِكَ مُحَمَّدٍ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ.
+    arabic: `سُبْحَانَ اللّهِ ، والْحَمْدُللّهِ ، وَ لَا اِلهَ اِلَّا اللّهُ ، وَ اللّهُ اَكْبَرُ ، وَ لَا حَوْلَ وَ لَا قُوَّةَ اِلَّا بِاللّهِ الْعَلِىَّ الْعَضِيِم ، وَ الْصَّلِاةُ وَ السَّلَامُ عَلَى رَسُولِ اللهِ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ. اَللَّهُمَّ إِيْمَانًا بِكَ ، وَتَصْدِيقًا لِكِتَابِكَ ، وَ وَفَاءً بِعَهْدِكَ ، وَ اْتِّبَاعًا لِسُنَّتِهِ نَبِيِّكَ وَ حَبِيبِكَ مُحَمَّدٍ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ.
 
 اَللَّهُمَّ إِنِّى أَسْأَلُكَ الْعَفْوَ وَ الْعَافِيَةَ ، وَ الْمُعَافَاةَ الدَّائِمَةَ فِى الدِّينِ وَ الدُّنْيَا وَ اَلْآخِرَةِ ، وَ الْفَوْزَ بِالْجَنَّةِ ، وَ النَّجَاةِ مِنَ النَّارِ`,
     english: `Glory be to Allah, and Praise be to Him. There is no God but Allah. Allah is the Greatest. There is no power nor strength except that granted by Allah. Peace and blessings be upon the messenger of Allah. O Allah! By my faith in Thee, and by my belief in Thy Book, and in fulfillment of the vows I made to Thee, and following the sunnah of Thy beloved Rasulullah (Sallallahu alaihi wasallam), (I perform the Tawaf of the Holy Kabah). O Allah! Truly I ask Thy forgiveness, and Thy protection, and everlasting soundness in faith in this world and in the Hereafter, and that I be granted Paradise and be freed from the fires of Hell.`,
@@ -29,7 +29,7 @@ const TAWAAF_DUAS = [
   },
   {
     round: 3,
-    arabic: `اللَّهُمَّ إِنِّي أَعُوْذُ بِكَ مِنَ الشَّكِ وَالشِّرْكِ وَالشِّقَاقِ وَالنِّفَاقِ وَسُوْءِ الأَخْلاَقِ ، وَسُوْءِ الْمَنْظَرِ وَالْمُنْقَلَبِ فِيْ الْمَالِ وَاْلأَهْلِ وَالْوَلَدِ
+    arabic: `اللَّهُمَّ إِنِّي أَعُوْذُ بِكَ مِنَ الشَّكِ وَالشِّرْكِ وَالشِّقَاقِ وَالنِّفَاقِ وَسُوْءِ الأَخْلَاقِ ، وَسُوْءِ الْمَنْظَرِ وَالْمُنْقَلَبِ فِيْ الْمَالِ وَاْلأَهْلِ وَالْوَلَدِ
 
 اللَّهُمَّ إِنِّي أَسْأَلُكَ رِضَاكَ وَالْجَنَّةَ ، وَأَعُوْذُ بِكَ مِنْ سَخَطِكَ وَالنَّارِ . اللَّهُمَّ إِنِّي أَعُوْذُ بِكَ مِنْ فِتْنَةِ الْقَبْرِ ، وَأَعُوْذُ بِكَ مِنْ فِتْنَةِ الْمَحْيَا وَالْمَمَاتِ`,
     english: `O Allah! Truly, I seek refuge in Thee from doubt and from associating with Thee others (in worship), and from discord, hypocrisy, and immorality, and from returning home to see my family and my children in an evil state of affairs. O Allah! Truly I ask Thee for Thy pleasure and that I be allowed to enter Paradise. And I take refuge in Thee from Thy anger and from the fire of Hell. O Allah! I seek refuge in Thee from falling from your grace in my grave and from the temptations in this life and trials at the time of death.`,
@@ -39,7 +39,7 @@ const TAWAAF_DUAS = [
     round: 4,
     arabic: `اللَّهُمَّ اجْعَلْهُ حِجًّا مَبْرُوْرًا وَسَعْيًا مَشْکُوْرًا ، وَذَنْبًا مَغْفُوْرًا ، وَعَمَلاً صَالِحًا مَقْبُوْلاً ، وَتِجَارَةً لَنْ تَبُوْرَ يَا عَالِمَ مَا فِيْ الصُّدُوْرِ أَخْرِجْنِي يَا اللهُ مِنَ الظُّلُمَاتِ إِلَى النُّوْرِ
 
-اللَّهُمَّ إِنِّي أَسْأَلُكَ مُوْجِبَاتِ رَحْمَتِكَ وَعَزَائِمَ مَغْفِرَتِكَ وَالسَّلاَمَةَ مِنْ کُلِّ إِثْمٍ وَالْغَنِيْمَةَ مِنْ كُلِّ بِرٍ ، وَالْفَوْزَ بِالْجَنَّةِ وَالْنَجَاةَ مِنَ النَّارِ
+اللَّهُمَّ إِنِّي أَسْأَلُكَ مُوْجِبَاتِ رَحْمَتِكَ وَعَزَائِمَ مَغْفِرَتِكَ وَالسَّلَامَةَ مِنْ کُلِّ إِثْمٍ وَالْغَنِيْمَةَ مِنْ كُلِّ بِرٍ ، وَالْفَوْزَ بِالْجَنَّةِ وَالْنَجَاةَ مِنَ النَّارِ
 
 رَبِّ قَنِّعْنِي بِمَا رَزَقْتَنِي ، وَبَارِكْ لِي فِيْمَا أَعْطَيْتَنِي وَأَخْلِفْ عَلَى کُلِّ غَائِبَةٍ لِيْ مِنْكَ بِخَيْرٍ`,
     english: `O Allah! Allow this pilgrimage to be accepted, and this endeavor to be rewarded, and my sins to be forgiven, and my good deeds to be approved and cause my business to flourish; O Thou, who knoweth all that is in our hearts! O Allah! Take me out of darkness into light. O Allah! I ask Thee that I be worthy of Thy Mercy, and certain of Thy Forgiveness, and immune to all sins, and be worthy of rewards for all my virtues, and be worthy of entering Paradise and be immune from Hell. O My Lord! Make me content with what Thou hast bestowed upon me. And let Thy Blessings be with what Thou hast given me. And compensate all that I lack with Thy own favor.`,
@@ -47,7 +47,7 @@ const TAWAAF_DUAS = [
   },
   {
     round: 5,
-    arabic: `اللَّهُمَّ أَظِلَّنِي تَحْتَ ظِلِّ عَرْشِكَ يَوْمَ لاَ ظِلَّ إِلاَّ ظِلُّكَ ، وَلاَ بَاقِيَ إِلاَّ وَجْهُكَ ، وَاسْقِنِي مِنْ حَوْضِ نَبِيِّكَ سَيِّدِنَا مُحَمَّدٍ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ شَرْبَةً هَنِيْئَةً مَرِيْئَةً لاَ نَظْمَأُ بَعْدَهَا أَبَدًا
+    arabic: `اللَّهُمَّ أَظِلَّنِي تَحْتَ ظِلِّ عَرْشِكَ يَوْمَ لَا ظِلَّ إِلَّا ظِلُّكَ ، وَلَا بَاقِيَ إِلَّا وَجْهُكَ ، وَاسْقِنِي مِنْ حَوْضِ نَبِيِّكَ سَيِّدِنَا مُحَمَّدٍ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ شَرْبَةً هَنِيْئَةً مَرِيْئَةً لَا نَظْمَأُ بَعْدَهَا أَبَدًا
 
 اللَّهُمَّ إِنِّي أَسْأَلُكَ مِنْ خَيْرِ مَا سَأَلَكَ مِنْهُ نَبِيُّكَ سَيِّدِنَا مُحَمَّدٍ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ وَأَعُوْذُ بِكَ مِنْ شَرِّ مَا اسْتَعَاذَكَ مِنْهُ نَبِيُّكَ سَيِّدُنَا مُحَمَّدٍ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ . اللَّهُمَّ إِنِّي أَسْأَلُكَ الْجَنَّةَ وَنَعِيْمَهَا وَمَا يُقَرِّبُنِي إِلَيْهَا مِنْ قَوْلٍ أَوْ فِعْلٍ أَوْ عَمَلٍ`,
     english: `O Allah! Bestow upon me the shade of Thy Throne on the Day when there shall be no shade except Thine, and there shall be no countenance except Thine. And allow me a drink from the cistern of Thy Rasulullah (Sallallahu alaihi wasallam) — a drink so pleasant that it may quench my thirst forever. O Allah! I ask Thee the best of that which Thy Rasulullah (Sallallahu alaihi wasallam) has asked of Thee. And I seek refuge in Thee from the evils from which Thy Rasulullah (Sallallahu alaihi wasallam) has sought refuge in Thee. O Allah! Truly I beseech Thee to grant me Paradise and its delights and whatever may bring me nearer to it whether by word, or by act, or by deed. And I seek refuge in Thee from the fires of Hell and whatever may bring me nearer to it whether by word, or by act, or by deed.`,
@@ -55,7 +55,7 @@ const TAWAAF_DUAS = [
   },
   {
     round: 6,
-    arabic: `اللَّهُمَّ إِنَّ لَكَ عَلَيَّ حُقُوقًا کَثِيْرَةً فِيْمَا بَيْنِيْ وَبَيْنِكَ ، وَحُقُوْقًا کَثِيْرَةً فِيْمَا بَيْنِي وَبَيْنَ خَلْقِكَ اللَّهُمَّ مَا کَانَ لَكَ مِنْهَا فَاغْفِرْهُ لِي وَمَا کَانَ لِخَلْقِكَ فَتَحَمَّلْهُ عَنِّي وَاغْنِنِيْ بِحَلاَلِكَ عَنْ حَرَامِكَ وَبِطَاعَتِكَ عَنْ مَعْصِيَتِكَ ، وَبِفَضْلِكَ عَمَّنْ سِوَاكَ ، يَا وَاسِعَ الْمَغْفِرَةِ .
+    arabic: `اللَّهُمَّ إِنَّ لَكَ عَلَيَّ حُقُوقًا کَثِيْرَةً فِيْمَا بَيْنِيْ وَبَيْنِكَ ، وَحُقُوْقًا کَثِيْرَةً فِيْمَا بَيْنِي وَبَيْنَ خَلْقِكَ اللَّهُمَّ مَا کَانَ لَكَ مِنْهَا فَاغْفِرْهُ لِي وَمَا کَانَ لِخَلْقِكَ فَتَحَمَّلْهُ عَنِّي وَاغْنِنِيْ بِحَلَالِكَ عَنْ حَرَامِكَ وَبِطَاعَتِكَ عَنْ مَعْصِيَتِكَ ، وَبِفَضْلِكَ عَمَّنْ سِوَاكَ ، يَا وَاسِعَ الْمَغْفِرَةِ .
 
 اللَّهُمَّ إِنَّ بَيْتِكَ عَظِيْمٌ ، وَوَجْهَكَ کَرِيْمٌ ، وَأَنْتَ يَا أللهُ حَلِيْمٌ کَرِيْمٌ عَظِيْمٌ تُحِبُّ الْعَفْوَ فَاعْفُ عَنِّي`,
     english: `O Allah! Thou hast many claims on me in my relations to Thee, and many claims in my relations to Thy creatures. O Allah! Release me of those which I owe to Thee, and give me the strength to bear those which I owe to Thy creatures. Make me content with what Thou hast made lawful and enable me to reject what Thou hast declared forbidden. And make me content with obedience to Thee, and let me beware of Thy disobedience. And make me content with Thy favor so that I may not seek favor from any one else, O Thou, whose Mercy is All Embracing. O Allah! Truly Thy house is Glorious and Thy Countenance Benign, and Thou, O Allah! art Clement, Noble and Great. Thou lovest forgiveness, so forgive me.`,
@@ -63,7 +63,7 @@ const TAWAAF_DUAS = [
   },
   {
     round: 7,
-    arabic: `اللَّهُمَّ إِنِّي أَسْأَلُكَ إِيْمَانًا کَامِلاً ، وَيَقِيْنًا صَادِقًا وَرِزْقًا وَاسِعًا وَقَلْبًا خَاشِعًا وَلِسَانًا ذَاکِرًا ، وَحَلاَلاً طَيِّبًا وَتَوْبَةً نَصُوْحًا ، وَتَوْبَةً قَبْلَ الْمَوْتِ وَرَاحَةً عِنْدَ الْمَوْتِ وَمَغْفِرَةً وَرَحْمَةً بَعْدَ الْمَوْتِ ، وَالْعَفْوَ عِنْدَ الْحِسَابِ. وَالْفَوْزَ بِالْجَنَّةِ ، وَالنَّجَاةَ مِنَ النَّارِ بِرَحْمَتِكَ يَا عَزِيْزُ يَا غَفَّارُ رَبِّ زِدْنِي عِلْمًا وَأَلْحِقْنِي بِالصَّالِحِينَ.`,
+    arabic: `اللَّهُمَّ إِنِّي أَسْأَلُكَ إِيْمَانًا کَامِلاً ، وَيَقِيْنًا صَادِقًا وَرِزْقًا وَاسِعًا وَقَلْبًا خَاشِعًا وَلِسَانًا ذَاکِرًا ، وَحَلَالاً طَيِّبًا وَتَوْبَةً نَصُوْحًا ، وَتَوْبَةً قَبْلَ الْمَوْتِ وَرَاحَةً عِنْدَ الْمَوْتِ وَمَغْفِرَةً وَرَحْمَةً بَعْدَ الْمَوْتِ ، وَالْعَفْوَ عِنْدَ الْحِسَابِ. وَالْفَوْزَ بِالْجَنَّةِ ، وَالنَّجَاةَ مِنَ النَّارِ بِرَحْمَتِكَ يَا عَزِيْزُ يَا غَفَّارُ رَبِّ زِدْنِي عِلْمًا وَأَلْحِقْنِي بِالصَّالِحِينَ.`,
     english: `O Allah! I seek from Thee a faith that is perfect, a conviction that is true, a heart that is full of devotion towards Thee, and a tongue that is forever engaged in Thy remembrance; and provisions that are vast, lawful and clean, and a repentance that is sincere; a repentance before death, peace at the time of death and Thy Benign Forgiveness and Mercy after death, and Thy Pardon at the time of reckoning, and the reward of Paradise and a reprieve from the fires of Hell. Accept my prayers O The Mighty One! O The Forgiver! O My Lord! Increase me in my knowledge and may I be counted among the righteous.`,
     urdu: ""
   }
