@@ -12,6 +12,9 @@ const os = require("os");
 
 const { TAWAAF_DUAS, YEMENI_CORNER_DUA } = require("../data/tawaaf-duas.js");
 
+const FONT_PATH = path.resolve(__dirname, "..", "fonts", "UthmanicHafs.woff2");
+const FONT_BASE64 = fs.readFileSync(FONT_PATH).toString("base64");
+
 const ORDINALS = [
   "First", "Second", "Third", "Fourth", "Fifth", "Sixth", "Seventh"
 ];
@@ -76,6 +79,11 @@ const html = `<!DOCTYPE html>
   <meta charset="UTF-8" />
   <title>EasyUmrah — Tawaaf Duas</title>
   <style>
+    @font-face {
+      font-family: "UthmanicHafs";
+      src: url(data:font/woff2;base64,${FONT_BASE64}) format("woff2");
+      font-display: block;
+    }
     @page {
       size: A4;
       margin: 18mm 16mm 20mm;
@@ -119,7 +127,7 @@ const html = `<!DOCTYPE html>
       max-width: 130mm;
     }
     .cover .arabic-cover {
-      font-family: "Noto Naskh Arabic", "Noto Sans Arabic", serif;
+      font-family: "UthmanicHafs", "Noto Naskh Arabic", "Noto Sans Arabic", serif;
       font-size: 26pt;
       color: #0a7a5c;
       margin-top: 3rem;
@@ -166,7 +174,7 @@ const html = `<!DOCTYPE html>
       font-weight: 700;
     }
     .arabic {
-      font-family: "Noto Naskh Arabic", "Noto Sans Arabic", serif;
+      font-family: "UthmanicHafs", "Noto Naskh Arabic", "Noto Sans Arabic", serif;
       font-size: 17pt;
       line-height: 2.1;
       text-align: center;
