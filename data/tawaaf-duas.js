@@ -13,7 +13,7 @@ const YEMENI_CORNER_DUA = {
 const TAWAAF_DUAS = [
   {
     round: 1,
-    arabic: `سُبْحَانَ اللّهِ ، والْحَمْدُللّهِ ، وَ لَا اِلهَ اِلَّا اللّهُ ، وَ اللّهُ اَكْبَرُ ، وَ لَا حَوْلَ وَ لَا قُوَّةَ اِلَّا بِاللّهِ الْعَلِىِّ الْعَضِيِم ، وَ الْصَّلِاةُ وَ السَّلَامُ عَلَى رَسُولِ اللهِ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ. اَللَّهُمَّ إِيْمَانًا بِكَ ، وَتَصْدِيقًا لِكِتَابِكَ ، وَ وَفَاءً بِعَهْدِكَ ، وَ اْتِّبَاعًا لِسُنَّتِهِ نَبِيِّكَ وَ حَبِيبِكَ مُحَمَّدٍ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ.
+    arabic: `سُبْحَانَ اللّهِ ، والْحَمْدُللّهِ ، وَ لَا اِلهَ اِلَّا اللّهُ ، وَ اللّهُ اَكْبَرُ ، وَ لَا حَوْلَ وَ لَا قُوَّةَ اِلَّا بِاللّهِ الْعَلِىِّ الْعَظِيِم ، وَ الْصَّلِاةُ وَ السَّلَامُ عَلَى رَسُولِ اللهِ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ. اَللَّهُمَّ إِيْمَانًا بِكَ ، وَتَصْدِيقًا لِكِتَابِكَ ، وَ وَفَاءً بِعَهْدِكَ ، وَ اْتِّبَاعًا لِسُنَّتِهِ نَبِيِّكَ وَ حَبِيبِكَ مُحَمَّدٍ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ.
 
 اَللَّهُمَّ إِنِّى أَسْأَلُكَ الْعَفْوَ وَ الْعَافِيَةَ ، وَ الْمُعَافَاةَ الدَّائِمَةَ فِى الدِّينِ وَ الدُّنْيَا وَ اَلْآخِرَةِ ، وَ الْفَوْزَ بِالْجَنَّةِ ، وَ النَّجَاةِ مِنَ النَّارِ`,
     english: `Glory be to Allah, and Praise be to Him. There is no God but Allah. Allah is the Greatest. There is no power nor strength except that granted by Allah. Peace and blessings be upon the messenger of Allah. O Allah! By my faith in Thee, and by my belief in Thy Book, and in fulfillment of the vows I made to Thee, and following the sunnah of Thy beloved Rasulullah (Sallallahu alaihi wasallam), (I perform the Tawaf of the Holy Kabah). O Allah! Truly I ask Thy forgiveness, and Thy protection, and everlasting soundness in faith in this world and in the Hereafter, and that I be granted Paradise and be freed from the fires of Hell.`,
