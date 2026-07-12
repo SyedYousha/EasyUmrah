@@ -21,50 +21,54 @@ const TAWAAF_DUAS = [
   },
   {
     round: 2,
-    arabic: `اللَّهُمَّ إِنَّ هَذَا الْبَيْتَ بَيْتُكَ ، وَالْحَرَمَ حَرَمُكَ ، وَاْلأَمْنَ أَمْنُكَ وَالْعَبْدَ عَبْدُكَ ، وَأَنَا عَبْدُكَ وَابْنُ عَبْدِكَ ، وَهَذَا مَقَامُ الْعَائِذِ بِكَ مِنَ النَّارِ ، فَحَرِّمْ لُحُوْمَنَا وَبَشَرَتَنَا عَلَى النَّارِ .
+    arabic: `اَللّٰهُمَّ اِنَّ هٰذَا الْبَيْتَ بَيْتُكَ وَالْحَرَمَ حَرَمُكَ وَالْاَمْنَ اَمْنُكَ وَالْعَبْدَ عَبْدُكَ وَاَنَا عَبْدُكَ وَابْنُ عَبْدِكَ وَهٰذَا مَقَامُ الْعَائِذِ بِكَ مِنَ النَّارِ ، فَحَرِّمْ لُحُوْمَنَا وَبَشَرَتَنَا عَلَى النَّارِ ، اَللّٰهُمَّ حَبِّبْ اِلَيْنَا الْاِيْمَانَ وَزَيِّنْهُ فِيْ قُلُوْبِنَا وَكَرِّهْ اِلَيْنَا الْكُفْرَ وَالْفُسُوْقَ وَالْعِصْيَانَ وَاجْعَلْنَا مِنَ الرَّاشِدِيْنَ .
 
-اللَّهُمَّ حَبِّبْ إِلَيْنَا الإِيْمَانَ وَزَيِّنْهُ فِيْ قُلُوْبِنَا ، وَکَرِّهْ إِلَيْنَا الْکُفْرَ وَالْفُسُوْقَ وَالْعِصْيَانَ وَاجْعَلْنَا مِنَ الرَّاشِدِيْنَ . اللَّهُمَّ قِنِي عَذَابَكَ يَوْمَ تَبْعَثُ عِبَادَكَ . اللَّهُمَّ ارْزُقْنِيْ الْجَنَّةَ بِغَيْرِ حِسَابٍ.`,
-    english: `O Allah! This House is Your House, this Sanctuary is Your Sanctuary, and the Security is Your Security, the slave is Your Slave, and I am Your Slave and the son of Your slave. This place is a refuge for those who seek Your Protection from the fire. Forbid our flesh and our complexion from the Fire (of Hell). O Allah! Endear to us the Faith, and adorn with it our hearts, and make hateful to us disbelief, wickedness and transgression, and cause us to be among those who are rightly guided. O Allah! Protect me from Thy punishment on the Day when Thou shalt resurrect Thy slaves. O Allah! Allow me to enter Paradise without any accounting.`,
+اَللّٰهُمَّ قِنِيْ عَذَابَكَ يَوْمَ تَبْعَثُ عِبَادَكَ .
+
+اَللّٰهُمَّ ارْزُقْنِيْ جَنَّتَكَ بِغَيْرِ حِسَابٍ .`,
+    english: `O Allah! Truly this House is Your House, this Sanctuary is Your Sanctuary, this Security is Your Security, and the slave is Your slave. I am Your slave and the son of Your slave. This is the station of one seeking refuge with You from the Fire. So forbid our flesh and our skin to the Fire. O Allah! Endear the faith to us and beautify it in our hearts, and make hateful to us disbelief, wickedness, and disobedience, and make us among the rightly-guided. O Allah! Protect me from Your punishment on the Day You resurrect Your slaves. O Allah! Grant me Your Paradise without any reckoning.`,
     urdu: ""
   },
   {
     round: 3,
-    arabic: `اللَّهُمَّ إِنِّي أَعُوْذُ بِكَ مِنَ الشَّكِ وَالشِّرْكِ وَالشِّقَاقِ وَالنِّفَاقِ وَسُوْءِ الأَخْلَاقِ ، وَسُوْءِ الْمَنْظَرِ وَالْمُنْقَلَبِ فِيْ الْمَالِ وَاْلأَهْلِ وَالْوَلَدِ
+    arabic: `اَللّٰهُمَّ اِنِّيْ اَعُوْذُبِكَ مِنَ الشَّكِ وَالشِّرْكِ وَالشِّقَاقِ وَالنِّفَاقِ وَسُوْءِ الْاَخْلَاقِ وَسُوْءِ الْمَنْظَرِ وَالْمُنْقَلَبِ فِي الْمَالِ وَالْاَهْلِ وَالْوَلَدِ .
 
-اللَّهُمَّ إِنِّي أَسْأَلُكَ رِضَاكَ وَالْجَنَّةَ ، وَأَعُوْذُ بِكَ مِنْ سَخَطِكَ وَالنَّارِ . اللَّهُمَّ إِنِّي أَعُوْذُ بِكَ مِنْ فِتْنَةِ الْقَبْرِ ، وَأَعُوْذُ بِكَ مِنْ فِتْنَةِ الْمَحْيَا وَالْمَمَاتِ`,
-    english: `O Allah! Truly, I seek refuge in Thee from doubt and from associating with Thee others (in worship), and from discord, hypocrisy, and immorality, and from returning home to see my family and my children in an evil state of affairs. O Allah! Truly I ask Thee for Thy pleasure and that I be allowed to enter Paradise. And I take refuge in Thee from Thy anger and from the fire of Hell. O Allah! I seek refuge in Thee from falling from your grace in my grave and from the temptations in this life and trials at the time of death.`,
+اَللّٰهُمَّ اِنِّيْ اَعُوْذُبِكَ مِنْ فِتْنَةِ الْقَبْرِ ، وَاَعُوْذُبِكَ مِنْ فِتْنَةِ الْمَحْيَاءِ وَالْمَمَاتِ وَاَعُوْذُبِكَ مِنَ الْخِزْيِ فِي الدُّنْيَا وَالْآخِرَةِ .`,
+    english: `O Allah! Truly I seek refuge in You from doubt, from shirk, from discord, from hypocrisy, from evil character, from evil appearance, and from an evil return in wealth, family, and children. O Allah! I seek refuge in You from the trial of the grave, and I seek refuge in You from the trial of life and death, and I seek refuge in You from disgrace in this world and in the Hereafter.`,
     urdu: ""
   },
   {
     round: 4,
-    arabic: `اللَّهُمَّ اجْعَلْهُ حِجًّا مَبْرُوْرًا وَسَعْيًا مَشْکُوْرًا ، وَذَنْبًا مَغْفُوْرًا ، وَعَمَلاً صَالِحًا مَقْبُوْلاً ، وَتِجَارَةً لَنْ تَبُوْرَ يَا عَالِمَ مَا فِيْ الصُّدُوْرِ أَخْرِجْنِي يَا اللَّهُ مِنَ الظُّلُمَاتِ إِلَى النُّوْرِ
+    arabic: `اَللّٰهُمَّ اجْعَلْهُ حَجًّا مَبْرُوْرًا وَسَعْيًا مَشْكُوْرًا وَذَنْبًا مَغْفُوْرًا وَعَمَلًا صَالِحًا مَقْبُوْلًا وَتِجَارَةً لَنْ تَبُوْرَ يَا عَلِيْمُ مَا فِي الصُّدُوْرِ اَخْرِجْنِيْ يَآ اَللّٰهُ مِنَ الظُّلُمَاتِ اِلَى النُّوْرِ .
 
-اللَّهُمَّ إِنِّي أَسْأَلُكَ مُوْجِبَاتِ رَحْمَتِكَ وَعَزَائِمَ مَغْفِرَتِكَ وَالسَّلَامَةَ مِنْ کُلِّ إِثْمٍ وَالْغَنِيْمَةَ مِنْ كُلِّ بِرٍ ، وَالْفَوْزَ بِالْجَنَّةِ وَالْنَجَاةَ مِنَ النَّارِ
+اَللّٰهُمَّ اِنِّيْ اَسْئَلُكَ مُوْجِبَاتِ رَحْمَتِكَ وَعَزَائِمَ مَغْفِرَتِكَ وَالسَّلَامَةَ مِنْ كُلِّ اِثْمٍ وَالْغَنِيْمَةَ مِنْ كُلِّ بِرٍّ وَالْفَوْزَ بِالْجَنَّةِ وَالنَّجَاةَ مِنَ النَّارِ .
 
-رَبِّ قَنِّعْنِي بِمَا رَزَقْتَنِي ، وَبَارِكْ لِي فِيْمَا أَعْطَيْتَنِي وَأَخْلِفْ عَلَى کُلِّ غَائِبَةٍ لِيْ مِنْكَ بِخَيْرٍ`,
-    english: `O Allah! Allow this pilgrimage to be accepted, and this endeavor to be rewarded, and my sins to be forgiven, and my good deeds to be approved and cause my business to flourish; O Thou, who knoweth all that is in our hearts! O Allah! Take me out of darkness into light. O Allah! I ask Thee that I be worthy of Thy Mercy, and certain of Thy Forgiveness, and immune to all sins, and be worthy of rewards for all my virtues, and be worthy of entering Paradise and be immune from Hell. O My Lord! Make me content with what Thou hast bestowed upon me. And let Thy Blessings be with what Thou hast given me. And compensate all that I lack with Thy own favor.`,
+رَبِّ قَنِّعْنِيْ بِمَا رَزَقْتَنِيْ وَبَارِكْ لِيْ فِيْمَا اَعْطَيْتَنِيْ وَاخْلُفْ عَلٰى كُلِّ غَائِبَةٍ لِيْ مِنْكَ بِخَيْرٍ .`,
+    english: `O Allah! Make this an accepted Hajj, an endeavor that is rewarded, a sin forgiven, a righteous deed accepted, and a trade that will never perish. O You who knows what is in the hearts! Bring me out, O Allah, from the darknesses into the light. O Allah! Truly I ask You for what necessitates Your mercy and what confirms Your forgiveness, and safety from every sin, gain from every act of righteousness, success in Paradise, and deliverance from the Fire. My Lord! Make me content with what You have provided me, bless me in what You have given me, and be a good replacement for me in every good thing that is absent from me.`,
     urdu: ""
   },
   {
     round: 5,
-    arabic: `اللَّهُمَّ أَظِلَّنِي تَحْتَ ظِلِّ عَرْشِكَ يَوْمَ لَا ظِلَّ إِلَّا ظِلُّكَ ، وَلَا بَاقِيَ إِلَّا وَجْهُكَ ، وَاسْقِنِي مِنْ حَوْضِ نَبِيِّكَ سَيِّدِنَا مُحَمَّدٍ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ شَرْبَةً هَنِيْئَةً مَرِيْئَةً لَا نَظْمَأُ بَعْدَهَا أَبَدًا
+    arabic: `اَللّٰهُمَّ اَظِلَّنِيْ تَحْتَ ظِلِّ عَرْشِكَ يَوْمَ لَا ظِلَّ اِلَّا ظِلُّ عَرْشِكَ وَلَا بَاقِيَ اِلَّا وَجْهَكَ ، وَاسْقِنِيْ مِنْ حَوْضِ نَبِيِّكَ سَيِّدِنَا مُحَمَّدٍ ﷺ شَرْبَةً هَنِيْئَةً مَرِيْئَةً لَا نَظْمَاُ بَعْدَهَا اَبَدًا .
 
-اللَّهُمَّ إِنِّي أَسْأَلُكَ مِنْ خَيْرِ مَا سَأَلَكَ مِنْهُ نَبِيُّكَ سَيِّدِنَا مُحَمَّدٍ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ وَأَعُوْذُ بِكَ مِنْ شَرِّ مَا اسْتَعَاذَكَ مِنْهُ نَبِيُّكَ سَيِّدُنَا مُحَمَّدٍ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ . اللَّهُمَّ إِنِّي أَسْأَلُكَ الْجَنَّةَ وَنَعِيْمَهَا وَمَا يُقَرِّبُنِي إِلَيْهَا مِنْ قَوْلٍ أَوْ فِعْلٍ أَوْ عَمَلٍ`,
-    english: `O Allah! Bestow upon me the shade of Thy Throne on the Day when there shall be no shade except Thine, and there shall be no countenance except Thine. And allow me a drink from the cistern of Thy Rasulullah (Sallallahu alaihi wasallam) — a drink so pleasant that it may quench my thirst forever. O Allah! I ask Thee the best of that which Thy Rasulullah (Sallallahu alaihi wasallam) has asked of Thee. And I seek refuge in Thee from the evils from which Thy Rasulullah (Sallallahu alaihi wasallam) has sought refuge in Thee. O Allah! Truly I beseech Thee to grant me Paradise and its delights and whatever may bring me nearer to it whether by word, or by act, or by deed. And I seek refuge in Thee from the fires of Hell and whatever may bring me nearer to it whether by word, or by act, or by deed.`,
+اَللّٰهُمَّ اِنِّيْ اَسْئَلُكَ مِنْ خَيْرِ مَا سَاَلَكَ مِنْهُ نَبِيُّكَ سَيِّدُنَا مُحَمَّدٌ ﷺ وَاَعُوْذُبِكَ مِنْ شَرِّ مَا اسْتَعَاذَكَ مِنْهُ نَبِيُّكَ سَيِّدُنَا مُحَمَّدٌ ﷺ وَاَنْتَ الْمُسْتَعَانُ وَعَلَيْكَ الْبَلٰغُ وَلَا حَوْلَ وَلَا قُوَّةَ اِلَّا بِاللّٰهِ .
+
+اَللّٰهُمَّ اِنِّيْ اَسْئَلُكَ الْجَنَّةَ وَنَعِيْمَهَا وَمَا يُقَرِّبُنِيْ اِلَيْهَا مِنْ قَوْلٍ اَوْ فِعْلٍ اَوْ عَمَلٍ وَاَعُوْذُبِكَ مِنَ النَّارِ ، وَمَا يُقَرِّبُنِيْ اِلَى النَّارِ مِنْ قَوْلٍ اَوْ فِعْلٍ اَوْ عَمَلٍ .`,
+    english: `O Allah! Shade me under the shade of Your Throne on the Day when there is no shade except the shade of Your Throne and no one remains except Your Face. Give me to drink from the pond of Your Prophet, our Master Muhammad ﷺ, a drink so pleasant and refreshing that I will never thirst afterwards. O Allah! I ask You for the best of what Your Prophet, our Master Muhammad ﷺ, asked of You, and I seek refuge in You from the worst of what Your Prophet, our Master Muhammad ﷺ, sought refuge in You from. You are the One from whom help is sought, and upon You is the delivery, and there is no might nor power except by Allah. O Allah! Truly I ask You for Paradise and its delights, and whatever brings me closer to it in word, act, or deed. And I seek refuge in You from the Fire, and whatever brings me closer to the Fire in word, act, or deed.`,
     urdu: ""
   },
   {
     round: 6,
-    arabic: `اللَّهُمَّ إِنَّ لَكَ عَلَيَّ حُقُوقًا کَثِيْرَةً فِيْمَا بَيْنِيْ وَبَيْنِكَ ، وَحُقُوْقًا کَثِيْرَةً فِيْمَا بَيْنِي وَبَيْنَ خَلْقِكَ اللَّهُمَّ مَا کَانَ لَكَ مِنْهَا فَاغْفِرْهُ لِي وَمَا کَانَ لِخَلْقِكَ فَتَحَمَّلْهُ عَنِّي وَاغْنِنِيْ بِحَلَالِكَ عَنْ حَرَامِكَ وَبِطَاعَتِكَ عَنْ مَعْصِيَتِكَ ، وَبِفَضْلِكَ عَمَّنْ سِوَاكَ ، يَا وَاسِعَ الْمَغْفِرَةِ .
+    arabic: `اَللّٰهُمَّ اِنَّ لَكَ عَلَيَّ حُقُوْقًا كَثِيْرَةً فِيْمَا بَيْنِيْ وَبَيْنَكَ ، وَحُقُوْقًا كَثِيْرَةً فِيْمَا بَيْنِيْ وَبَيْنَ خَلْقِكَ ، اَللّٰهُمَّ مَا كَانَ لَكَ مِنْهَا فَاغْفِرْهُ لِيْ وَمَا كَانَ لِخَلْقِكَ فَتَحَمَّلْهُ عَنِّيْ وَاَغْنِنِيْ بِحَلَالِكَ عَنْ حَرَامِكَ وَبِطَاعَتِكَ عَنْ مَعْصِيَتِكَ وَبِفَضْلِكَ عَمَّنْ سِوَاكَ يَا وَاسِعَ الْمَغْفِرَةِ .
 
-اللَّهُمَّ إِنَّ بَيْتِكَ عَظِيْمٌ ، وَوَجْهَكَ کَرِيْمٌ ، وَأَنْتَ يَا أللهُ حَلِيْمٌ کَرِيْمٌ عَظِيْمٌ تُحِبُّ الْعَفْوَ فَاعْفُ عَنِّي`,
-    english: `O Allah! Thou hast many claims on me in my relations to Thee, and many claims in my relations to Thy creatures. O Allah! Release me of those which I owe to Thee, and give me the strength to bear those which I owe to Thy creatures. Make me content with what Thou hast made lawful and enable me to reject what Thou hast declared forbidden. And make me content with obedience to Thee, and let me beware of Thy disobedience. And make me content with Thy favor so that I may not seek favor from any one else, O Thou, whose Mercy is All Embracing. O Allah! Truly Thy house is Glorious and Thy Countenance Benign, and Thou, O Allah! art Clement, Noble and Great. Thou lovest forgiveness, so forgive me.`,
+اَللّٰهُمَّ اِنَّ بَيْتَكَ عَظِيْمٌ وَوَجْهَكَ كَرِيْمٌ وَاَنْتَ يَا اَللّٰهُ حَلِيْمٌ كَرِيْمٌ عَظِيْمٌ تُحِبُّ الْعَفْوَ فَاعْفُ عَنِّيْ .`,
+    english: `O Allah! You have upon me many rights in what is between me and You, and many rights in what is between me and Your creation. O Allah! Whatever of them is Yours, forgive me for it; and whatever is for Your creation, bear it on my behalf. Enrich me with what is lawful of Yours so I have no need of what You have forbidden, and with obedience to You so I have no need of disobedience, and with Your grace so I have no need of anyone but You, O You whose forgiveness is vast. O Allah! Truly Your House is great, and Your Countenance is noble, and You, O Allah, are Forbearing, Noble, and Great. You love pardon, so pardon me.`,
     urdu: ""
   },
   {
     round: 7,
-    arabic: `اللَّهُمَّ إِنِّي أَسْأَلُكَ إِيْمَانًا کَامِلاً ، وَيَقِيْنًا صَادِقًا وَرِزْقًا وَاسِعًا وَقَلْبًا خَاشِعًا وَلِسَانًا ذَاکِرًا ، وَحَلَالاً طَيِّبًا وَتَوْبَةً نَصُوْحًا ، وَتَوْبَةً قَبْلَ الْمَوْتِ وَرَاحَةً عِنْدَ الْمَوْتِ وَمَغْفِرَةً وَرَحْمَةً بَعْدَ الْمَوْتِ ، وَالْعَفْوَ عِنْدَ الْحِسَابِ. وَالْفَوْزَ بِالْجَنَّةِ ، وَالنَّجَاةَ مِنَ النَّارِ بِرَحْمَتِكَ يَا عَزِيْزُ يَا غَفَّارُ رَبِّ زِدْنِي عِلْمًا وَأَلْحِقْنِي بِالصَّالِحِينَ.`,
-    english: `O Allah! I seek from Thee a faith that is perfect, a conviction that is true, a heart that is full of devotion towards Thee, and a tongue that is forever engaged in Thy remembrance; and provisions that are vast, lawful and clean, and a repentance that is sincere; a repentance before death, peace at the time of death and Thy Benign Forgiveness and Mercy after death, and Thy Pardon at the time of reckoning, and the reward of Paradise and a reprieve from the fires of Hell. Accept my prayers O The Mighty One! O The Forgiver! O My Lord! Increase me in my knowledge and may I be counted among the righteous.`,
+    arabic: `اَللّٰهُمَّ اِنِّيْ اَسْئَلُكَ اِيْمَانًا كَامِلًا وَيَقِيْنًا صَادِقًا وَرِزْقًا وَاسِعًا وَقَلْبًا خَاشِعًا وَلِسَانًا ذَاكِرًا وَحَلَالًا طَيِّبًا وَتَوْبَةً نَصُوْحًا وَتَوْبَةً قَبْلَ الْمَوْتِ وَرَاحَةً عِنْدَ الْمَوْتِ وَمَغْفِرَةً وَرَحْمَةً بَعْدَ الْمَوْتِ وَالْعَفْوَ عِنْدَ الْحِسَابِ وَالْفَوْزَ بِالْجَنَّةِ وَالنَّجَاةَ مِنَ النَّارِ بِرَحْمَتِكَ يَا عَزِيْزُ يَا غَفَّارُ ، رَبِّ زِدْنِيْ عِلْمًا وَاَلْحِقْنِيْ بِالصَّالِحِيْنَ .`,
+    english: `O Allah! Truly I ask You for perfect faith, sincere certainty, ample provision, a heart that is humble, a tongue that remembers You, lawful and wholesome sustenance, sincere repentance, repentance before death, comfort at the time of death, forgiveness and mercy after death, pardon at the reckoning, success in Paradise, and deliverance from the Fire — by Your mercy, O Mighty One, O All-Forgiving. My Lord! Increase me in knowledge and join me with the righteous.`,
     urdu: ""
   }
 ];
