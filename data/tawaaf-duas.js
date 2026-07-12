@@ -13,7 +13,7 @@ const YEMENI_CORNER_DUA = {
 const TAWAAF_DUAS = [
   {
     round: 1,
-    arabic: `سُبْحَانَ اللّهِ ، والْحَمْدُللّهِ ، وَ لَا اِلهَ اِلَّا اللّهُ ، وَ اللّهُ اَكْبَرُ ، وَ لَا حَوْلَ وَ لَا قُوَّةَ اِلَّا بِاللّهِ الْعَلِىِّ الْعَظِيمِ ، وَ الْصَّلِاةُ وَ السَّلَامُ عَلَى رَسُولِ اللهِ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ. اَللَّهُمَّ إِيْمَانًا بِكَ ، وَتَصْدِيقًا لِكِتَابِكَ ، وَ وَفَاءً بِعَهْدِكَ ، وَ اْتِّبَاعًا لِسُنَّتِهِ نَبِيِّكَ وَ حَبِيبِكَ مُحَمَّدٍ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ.
+    arabic: `سُبْحَانَ اللَّهِ ، والْحَمْدُللّهِ ، وَ لَا اِلهَ اِلَّا اللَّهُ ، وَ اللَّهُ اَكْبَرُ ، وَ لَا حَوْلَ وَ لَا قُوَّةَ اِلَّا بِاللَّهِ الْعَلِىِّ الْعَظِيمِ ، وَ الْصَّلِاةُ وَ السَّلَامُ عَلَى رَسُولِ اللَّهِ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ. اَللَّهُمَّ إِيْمَانًا بِكَ ، وَتَصْدِيقًا لِكِتَابِكَ ، وَ وَفَاءً بِعَهْدِكَ ، وَ اْتِّبَاعًا لِسُنَّتِهِ نَبِيِّكَ وَ حَبِيبِكَ مُحَمَّدٍ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ.
 
 اَللَّهُمَّ إِنِّى أَسْأَلُكَ الْعَفْوَ وَ الْعَافِيَةَ ، وَ الْمُعَافَاةَ الدَّائِمَةَ فِى الدِّينِ وَ الدُّنْيَا وَ اَلْآخِرَةِ ، وَ الْفَوْزَ بِالْجَنَّةِ ، وَ النَّجَاةِ مِنَ النَّارِ`,
     english: `Glory be to Allah, and Praise be to Him. There is no God but Allah. Allah is the Greatest. There is no power nor strength except that granted by Allah. Peace and blessings be upon the messenger of Allah. O Allah! By my faith in Thee, and by my belief in Thy Book, and in fulfillment of the vows I made to Thee, and following the sunnah of Thy beloved Rasulullah (Sallallahu alaihi wasallam), (I perform the Tawaf of the Holy Kabah). O Allah! Truly I ask Thy forgiveness, and Thy protection, and everlasting soundness in faith in this world and in the Hereafter, and that I be granted Paradise and be freed from the fires of Hell.`,
@@ -37,7 +37,7 @@ const TAWAAF_DUAS = [
   },
   {
     round: 4,
-    arabic: `اللَّهُمَّ اجْعَلْهُ حِجًّا مَبْرُوْرًا وَسَعْيًا مَشْکُوْرًا ، وَذَنْبًا مَغْفُوْرًا ، وَعَمَلاً صَالِحًا مَقْبُوْلاً ، وَتِجَارَةً لَنْ تَبُوْرَ يَا عَالِمَ مَا فِيْ الصُّدُوْرِ أَخْرِجْنِي يَا اللهُ مِنَ الظُّلُمَاتِ إِلَى النُّوْرِ
+    arabic: `اللَّهُمَّ اجْعَلْهُ حِجًّا مَبْرُوْرًا وَسَعْيًا مَشْکُوْرًا ، وَذَنْبًا مَغْفُوْرًا ، وَعَمَلاً صَالِحًا مَقْبُوْلاً ، وَتِجَارَةً لَنْ تَبُوْرَ يَا عَالِمَ مَا فِيْ الصُّدُوْرِ أَخْرِجْنِي يَا اللَّهُ مِنَ الظُّلُمَاتِ إِلَى النُّوْرِ
 
 اللَّهُمَّ إِنِّي أَسْأَلُكَ مُوْجِبَاتِ رَحْمَتِكَ وَعَزَائِمَ مَغْفِرَتِكَ وَالسَّلَامَةَ مِنْ کُلِّ إِثْمٍ وَالْغَنِيْمَةَ مِنْ كُلِّ بِرٍ ، وَالْفَوْزَ بِالْجَنَّةِ وَالْنَجَاةَ مِنَ النَّارِ
 
@@ -47,9 +47,9 @@ const TAWAAF_DUAS = [
   },
   {
     round: 5,
-    arabic: `اللَّهُمَّ أَظِلَّنِي تَحْتَ ظِلِّ عَرْشِكَ يَوْمَ لَا ظِلَّ إِلَّا ظِلُّكَ ، وَلَا بَاقِيَ إِلَّا وَجْهُكَ ، وَاسْقِنِي مِنْ حَوْضِ نَبِيِّكَ سَيِّدِنَا مُحَمَّدٍ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ شَرْبَةً هَنِيْئَةً مَرِيْئَةً لَا نَظْمَأُ بَعْدَهَا أَبَدًا
+    arabic: `اللَّهُمَّ أَظِلَّنِي تَحْتَ ظِلِّ عَرْشِكَ يَوْمَ لَا ظِلَّ إِلَّا ظِلُّكَ ، وَلَا بَاقِيَ إِلَّا وَجْهُكَ ، وَاسْقِنِي مِنْ حَوْضِ نَبِيِّكَ سَيِّدِنَا مُحَمَّدٍ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ شَرْبَةً هَنِيْئَةً مَرِيْئَةً لَا نَظْمَأُ بَعْدَهَا أَبَدًا
 
-اللَّهُمَّ إِنِّي أَسْأَلُكَ مِنْ خَيْرِ مَا سَأَلَكَ مِنْهُ نَبِيُّكَ سَيِّدِنَا مُحَمَّدٍ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ وَأَعُوْذُ بِكَ مِنْ شَرِّ مَا اسْتَعَاذَكَ مِنْهُ نَبِيُّكَ سَيِّدُنَا مُحَمَّدٍ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ . اللَّهُمَّ إِنِّي أَسْأَلُكَ الْجَنَّةَ وَنَعِيْمَهَا وَمَا يُقَرِّبُنِي إِلَيْهَا مِنْ قَوْلٍ أَوْ فِعْلٍ أَوْ عَمَلٍ`,
+اللَّهُمَّ إِنِّي أَسْأَلُكَ مِنْ خَيْرِ مَا سَأَلَكَ مِنْهُ نَبِيُّكَ سَيِّدِنَا مُحَمَّدٍ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ وَأَعُوْذُ بِكَ مِنْ شَرِّ مَا اسْتَعَاذَكَ مِنْهُ نَبِيُّكَ سَيِّدُنَا مُحَمَّدٍ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ . اللَّهُمَّ إِنِّي أَسْأَلُكَ الْجَنَّةَ وَنَعِيْمَهَا وَمَا يُقَرِّبُنِي إِلَيْهَا مِنْ قَوْلٍ أَوْ فِعْلٍ أَوْ عَمَلٍ`,
     english: `O Allah! Bestow upon me the shade of Thy Throne on the Day when there shall be no shade except Thine, and there shall be no countenance except Thine. And allow me a drink from the cistern of Thy Rasulullah (Sallallahu alaihi wasallam) — a drink so pleasant that it may quench my thirst forever. O Allah! I ask Thee the best of that which Thy Rasulullah (Sallallahu alaihi wasallam) has asked of Thee. And I seek refuge in Thee from the evils from which Thy Rasulullah (Sallallahu alaihi wasallam) has sought refuge in Thee. O Allah! Truly I beseech Thee to grant me Paradise and its delights and whatever may bring me nearer to it whether by word, or by act, or by deed. And I seek refuge in Thee from the fires of Hell and whatever may bring me nearer to it whether by word, or by act, or by deed.`,
     urdu: ""
   },
