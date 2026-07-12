@@ -5,9 +5,9 @@
 // Recited between the Yemeni Corner (Rukn Yamani) and the Black Stone
 // (Hajr-e-Aswad) on every round of tawaaf.
 const YEMENI_CORNER_DUA = {
-  arabic: `رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ ، وَأدْخِلْنَا الْجَنَّةَ مَعَ الْأبْرَاَرِ ، يَا عَزِيرُ يَا غَفَّارُ ، يَا رَبَّ الْعَالَمِينَ .`,
-  english: `Our Lord! Grant us good in this world and good in the Hereafter, and save us from the chastisement of fire, and allow us to enter Paradise with the righteous ones. O Glorious One! O All Forgiving! O Lord of the Universe!`,
-  urdu: `اے ہمارے رب! ہمیں دنیا میں نیکی عطا فرما اور آخرت میں بھی بھلائی عطا فرما اور ہمیں جہنم کے عذاب سے نجات دے، اور ہمیں نیک بندوں کے ساتھ جنت میں داخل فرما، اے غالب، اے بڑی بخشش کرنے والے، اے تمام جہانوں کے پروردگار۔`
+  arabic: `اَللّٰهُمَّ اِنِّيْ اَسْئَلُكَ الْعَفْوَ وَالْعَافِيَةَ فِي الدُّنْيَا وَالْآخِرَةِ رَبَّنَآ اٰتِنَا فِي الدُّنْيَا حَسَنَةً وَّفِي الْآخِرَةِ حَسَنَةً وَّقِنَا عَذَابَ النَّارِ ، وَاَدْخِلْنَا الْجَنَّةَ مَعَ الْاَبْرَارِ يَا عَزِيْزُ يَا غَفَّارُ يَا رَبَّ الْعَالَمِيْنَ .`,
+  english: `O Allah! Truly I ask You for pardon and well-being in this world and in the Hereafter. Our Lord! Grant us good in this world and good in the Hereafter, and save us from the punishment of the Fire, and admit us to Paradise with the righteous. O Mighty One, O All-Forgiving, O Lord of the Worlds.`,
+  urdu: `اے اللہ میں آپ سے دنیا اور آخرت کی بھلائی اور معافی چاہتا ہوں، اے ہمارے رب ہم کو دنیا اور آخرت کی بھلائی عطا فرما اور جہنم کے عذاب سے ہم کو بچالے اور جنت میں نیک لوگوں کے ساتھ ہم کو داخل فرما، تو بڑا غالب اور بڑا بخشش کرنے والا، اے دونوں جہاں کے پالنہار۔`
 };
 
 const TAWAAF_DUAS = [
@@ -19,7 +19,7 @@ const TAWAAF_DUAS = [
     english: `Glory be to Allah, and Praise be to Allah. There is no god but Allah. Allah is the Greatest. There is no power nor strength except by Allah, The Exalted, The Great. Peace and blessings be upon the Messenger of Allah ﷺ. O Allah! By my faith in Thee, and by my belief in Thy Words, and in fulfillment of the vows I made to Thee, and following the sunnah of Thy Prophet and Thy beloved, our Master Muhammad ﷺ. O Allah! Truly I ask Thee for pardon, well-being, and everlasting soundness in faith, in this world and in the Hereafter, and for success in Paradise and deliverance from the Fire.`,
     urdu: `اللہ کی ذات ہر عیب سے پاک ہے اور ہر تعریف اللہ کے لئے ہے، اللہ کے سوا کوئی عبادت کے لائق نہیں، اللہ بہت بڑا ہے، اس کی مدد کے بغیر گناہوں سے بچا نہیں جاسکتا، اور اسی کی مدد سے عبادت پر قدرت ہوتی ہے، اللہ بہت بڑا ہے اور بہت بڑی عظمت والا ہے، حضور صلی اللہ علیہ وسلم پر درود و سلام نازل ہو، اے اللہ ہم تجھ پر ایمان لانے کی حالت میں اور تیرے کلمات کی تصدیق کرکے اور عہد کو پورا کرتے ہوئے اور تیرے نبی کی سنت کی اتباع میں طواف کرتے ہیں۔
 
-اے اللہ بیشک میں تجھ سے عفو اور سلامتی کا سوال کرتا … [سکین شدہ صفحہ ۱۲۱ میں باقی حصہ موجود نہیں]`
+اے اللہ بیشک میں تجھ سے عفو اور سلامتی کا سوال کرتا ہوں، اور دین اور دنیا اور آخرت میں دائمی درگزر اور حصول جنت اور جہنم سے نجات کے ساتھ کامیابی کی درخواست کرتا ہوں۔`
   },
   {
     round: 2,
@@ -87,7 +87,7 @@ const TAWAAF_DUAS = [
     round: 7,
     arabic: `اَللّٰهُمَّ اِنِّيْ اَسْئَلُكَ اِيْمَانًا كَامِلًا وَيَقِيْنًا صَادِقًا وَرِزْقًا وَاسِعًا وَقَلْبًا خَاشِعًا وَلِسَانًا ذَاكِرًا وَحَلَالًا طَيِّبًا وَتَوْبَةً نَصُوْحًا وَتَوْبَةً قَبْلَ الْمَوْتِ وَرَاحَةً عِنْدَ الْمَوْتِ وَمَغْفِرَةً وَرَحْمَةً بَعْدَ الْمَوْتِ وَالْعَفْوَ عِنْدَ الْحِسَابِ وَالْفَوْزَ بِالْجَنَّةِ وَالنَّجَاةَ مِنَ النَّارِ بِرَحْمَتِكَ يَا عَزِيْزُ يَا غَفَّارُ ، رَبِّ زِدْنِيْ عِلْمًا وَاَلْحِقْنِيْ بِالصَّالِحِيْنَ .`,
     english: `O Allah! Truly I ask You for perfect faith, sincere certainty, ample provision, a heart that is humble, a tongue that remembers You, lawful and wholesome sustenance, sincere repentance, repentance before death, comfort at the time of death, forgiveness and mercy after death, pardon at the reckoning, success in Paradise, and deliverance from the Fire — by Your mercy, O Mighty One, O All-Forgiving. My Lord! Increase me in knowledge and join me with the righteous.`,
-    urdu: `اے اللہ بیشک میں آپ سے کامل ایمان اور سچا یقین اور وسیع رزق کا سوال کرتا ہوں، اور خشوع کرنے والا دل اور ذکر کرنے والی زبان، پاک حلال کمائی، اور سچی توبہ اور مرنے سے پہلے توبہ کی توفیق، اور موت کے وقت آسانی، اور مرنے کے بعد مغفرت اور رحمت، اور حساب و کتاب کے وقت معافی اور درگزر، اور جنت کی کامیابی، اور جہنم سے تیری رحمت سے نجات چاہتا ہوں، اے بڑے غالب اور بڑی بخشش کرنے والے، اے میرے رب میرے علم میں اضافہ کر، اور مجھ کو … [سکین شدہ صفحہ ۱۳۰ میں باقی حصہ موجود نہیں]`
+    urdu: `اے اللہ بیشک میں آپ سے کامل ایمان اور سچا یقین اور وسیع رزق کا سوال کرتا ہوں، اور خشوع کرنے والا دل اور ذکر کرنے والی زبان، پاک حلال کمائی، اور سچی توبہ اور مرنے سے پہلے توبہ کی توفیق، اور موت کے وقت آسانی، اور مرنے کے بعد مغفرت اور رحمت، اور حساب و کتاب کے وقت معافی اور درگزر، اور جنت کی کامیابی، اور جہنم سے تیری رحمت سے نجات چاہتا ہوں، اے بڑے غالب اور بڑی بخشش کرنے والے، اے میرے رب میرے علم میں اضافہ کر، اور مجھ کو آخرت میں نیک لوگوں کے ساتھ شامل فرما۔`
   }
 ];
 

@@ -1,9 +1,10 @@
 #!/usr/bin/env node
-// Generates easyumrah-tawaaf-duas.pdf from the duas in data/tawaaf-duas.js.
-// Requires a Chromium binary; auto-detects the pre-installed one when available.
+// Generates two PDFs from the duas in data/tawaaf-duas.js:
+//   easyumrah-tawaaf-duas-en.pdf  (English translations)
+//   easyumrah-tawaaf-duas-ur.pdf  (Urdu translations)
 //
-// Run with:
-//   node scripts/generate-pdf.js
+// Requires a Chromium binary; auto-detects the pre-installed one when available.
+// Run with:  node scripts/generate-pdf.js
 
 const fs = require("fs");
 const path = require("path");
@@ -18,6 +19,33 @@ const FONT_BASE64 = fs.readFileSync(FONT_PATH).toString("base64");
 const ORDINALS = [
   "First", "Second", "Third", "Fourth", "Fifth", "Sixth", "Seventh"
 ];
+
+const LABELS = {
+  en: {
+    cover_brand: "EasyUmrah",
+    cover_title: "Tawaaf Duas",
+    cover_subtitle:
+      "Duas for each of the seven rounds (shawt) of tawaaf, with the dua recited between the Yemeni Corner and Hajr-e-Aswad on every round.",
+    cover_footer: "easyumrah — a simple guide for pilgrims",
+    round_of: (n) => `Round ${n} / 7`,
+    round_title: (n) => `${ORDINALS[n - 1] || "Round " + n} Round`,
+    corner_badge: "Recite on every round",
+    corner_title: "Between the Yemeni Corner & Hajr-e-Aswad",
+    translation_label: "Translation",
+  },
+  ur: {
+    cover_brand: "EasyUmrah",
+    cover_title: "طواف کی دعائیں",
+    cover_subtitle:
+      "طواف کے سات چکروں میں سے ہر چکر کی دعا، اور رکنِ یمانی اور حجرِ اسود کے درمیان ہر چکر میں پڑھی جانے والی دعا۔",
+    cover_footer: "easyumrah — حجاج کے لیے ایک سادہ رہنما",
+    round_of: (n) => `چکر ${n} / 7`,
+    round_title: (n) => `${n === 1 ? "پہلا" : n === 2 ? "دوسرا" : n === 3 ? "تیسرا" : n === 4 ? "چوتھا" : n === 5 ? "پانچواں" : n === 6 ? "چھٹا" : "ساتواں"} چکر`,
+    corner_badge: "ہر چکر میں پڑھی جائے",
+    corner_title: "رکنِ یمانی اور حجرِ اسود کے درمیان",
+    translation_label: "ترجمہ",
+  },
+};
 
 function escapeHtml(s) {
   return String(s || "")
@@ -36,48 +64,60 @@ function paragraphsToHtml(text) {
     .join("\n");
 }
 
-function roundSection(dua) {
-  const ordinal = ORDINALS[dua.round - 1] || `Round ${dua.round}`;
+function roundSection(dua, lang, labels) {
+  const translation = lang === "ur" ? dua.urdu : dua.english;
+  const translationClass = lang === "ur" ? "translation urdu" : "translation";
   return `
     <section class="round">
       <header class="round-header">
-        <div class="round-badge">Round ${dua.round} / 7</div>
-        <h2>${ordinal} Round</h2>
+        <div class="round-badge">${labels.round_of(dua.round)}</div>
+        <h2>${labels.round_title(dua.round)}</h2>
       </header>
       <div class="arabic" dir="rtl" lang="ar">
         ${paragraphsToHtml(dua.arabic)}
       </div>
-      <div class="translation" lang="en">
-        <div class="translation-label">Translation</div>
-        ${paragraphsToHtml(dua.english)}
+      <div class="${translationClass}" ${lang === "ur" ? 'dir="rtl" lang="ur"' : 'lang="en"'}>
+        <div class="translation-label">${labels.translation_label}</div>
+        ${paragraphsToHtml(translation)}
       </div>
     </section>
   `;
 }
 
-function cornerSection(dua) {
+function cornerSection(dua, lang, labels) {
+  const translation = lang === "ur" ? dua.urdu : dua.english;
+  const translationClass = lang === "ur" ? "translation urdu" : "translation";
   return `
     <section class="round corner">
       <header class="round-header">
-        <div class="round-badge corner-badge">Recite on every round</div>
-        <h2>Between the Yemeni Corner &amp; Hajr-e-Aswad</h2>
+        <div class="round-badge corner-badge">${labels.corner_badge}</div>
+        <h2>${labels.corner_title}</h2>
       </header>
       <div class="arabic" dir="rtl" lang="ar">
         ${paragraphsToHtml(dua.arabic)}
       </div>
-      <div class="translation" lang="en">
-        <div class="translation-label">Translation</div>
-        ${paragraphsToHtml(dua.english)}
+      <div class="${translationClass}" ${lang === "ur" ? 'dir="rtl" lang="ur"' : 'lang="en"'}>
+        <div class="translation-label">${labels.translation_label}</div>
+        ${paragraphsToHtml(translation)}
       </div>
     </section>
   `;
 }
 
-const html = `<!DOCTYPE html>
-<html lang="en">
+function buildHtml(lang) {
+  const labels = LABELS[lang];
+  const isUrdu = lang === "ur";
+  const bodyDir = isUrdu ? "rtl" : "ltr";
+  const bodyLang = isUrdu ? "ur" : "en";
+  const bodyFont = isUrdu
+    ? '"Noto Nastaliq Urdu", "Noto Naskh Arabic", serif'
+    : '"Noto Serif", "Liberation Serif", serif';
+
+  return `<!DOCTYPE html>
+<html lang="${bodyLang}" dir="${bodyDir}">
 <head>
   <meta charset="UTF-8" />
-  <title>EasyUmrah — Tawaaf Duas</title>
+  <title>EasyUmrah — Tawaaf Duas (${isUrdu ? "Urdu" : "English"})</title>
   <style>
     @font-face {
       font-family: "UthmanicHafs";
@@ -93,9 +133,9 @@ const html = `<!DOCTYPE html>
       margin: 0;
       padding: 0;
       color: #1c1c1c;
-      font-family: "Noto Serif", "Liberation Serif", serif;
-      font-size: 11pt;
-      line-height: 1.55;
+      font-family: ${bodyFont};
+      font-size: ${isUrdu ? "11.5pt" : "11pt"};
+      line-height: ${isUrdu ? "2" : "1.55"};
     }
     .cover {
       display: flex;
@@ -113,21 +153,24 @@ const html = `<!DOCTYPE html>
       text-transform: uppercase;
       margin-bottom: 1rem;
       font-weight: 600;
+      direction: ltr;
     }
     .cover h1 {
-      font-size: 34pt;
+      font-size: ${isUrdu ? "32pt" : "34pt"};
       margin: 0 0 1.25rem;
       color: #1c1c1c;
       font-weight: 700;
       letter-spacing: -0.01em;
+      line-height: ${isUrdu ? "1.8" : "1.2"};
     }
     .cover .subtitle {
       font-size: 13pt;
       color: #5c5c5c;
       max-width: 130mm;
+      line-height: ${isUrdu ? "2" : "1.55"};
     }
     .cover .arabic-cover {
-      font-family: "UthmanicHafs", "Noto Naskh Arabic", "Noto Sans Arabic", serif;
+      font-family: "UthmanicHafs", "Noto Naskh Arabic", serif;
       font-size: 26pt;
       color: #0a7a5c;
       margin-top: 3rem;
@@ -168,22 +211,21 @@ const html = `<!DOCTYPE html>
       color: #a26b1a;
     }
     .round-header h2 {
-      font-size: 20pt;
+      font-size: ${isUrdu ? "22pt" : "20pt"};
       margin: 0;
       color: #1c1c1c;
       font-weight: 700;
+      line-height: ${isUrdu ? "1.6" : "1.2"};
     }
     .arabic {
-      font-family: "UthmanicHafs", "Noto Naskh Arabic", "Noto Sans Arabic", serif;
+      font-family: "UthmanicHafs", "Noto Naskh Arabic", serif;
       font-size: 17pt;
-      line-height: 2.1;
+      line-height: 2.3;
       text-align: center;
       color: #1c1c1c;
       margin-bottom: 8mm;
     }
-    .arabic p {
-      margin: 0 0 5mm;
-    }
+    .arabic p { margin: 0 0 5mm; }
     .arabic p:last-child { margin-bottom: 0; }
     .translation {
       background: #faf7ef;
@@ -194,6 +236,14 @@ const html = `<!DOCTYPE html>
       color: #2a2a2a;
       line-height: 1.65;
     }
+    .translation.urdu {
+      font-family: "Noto Nastaliq Urdu", serif;
+      font-size: 13pt;
+      line-height: 2.4;
+      border-left: none;
+      border-right: 3px solid #0a7a5c;
+      text-align: right;
+    }
     .translation-label {
       font-size: 8.5pt;
       letter-spacing: 0.15em;
@@ -202,10 +252,16 @@ const html = `<!DOCTYPE html>
       font-weight: 600;
       margin-bottom: 3mm;
     }
+    .translation.urdu .translation-label {
+      font-family: "Noto Nastaliq Urdu", serif;
+      font-size: 10pt;
+      letter-spacing: normal;
+      text-transform: none;
+    }
     .translation p { margin: 0 0 3mm; }
     .translation p:last-child { margin-bottom: 0; }
     .corner .translation {
-      border-left-color: #a26b1a;
+      border-color: #a26b1a;
       background: #fbf3e2;
     }
     .corner .translation-label { color: #a26b1a; }
@@ -213,29 +269,21 @@ const html = `<!DOCTYPE html>
 </head>
 <body>
   <div class="cover">
-    <div class="brand">EasyUmrah</div>
-    <h1>Tawaaf Duas</h1>
-    <p class="subtitle">
-      Duas for each of the seven rounds (shawt) of tawaaf, with the
-      Rabbana Atina dua recited between the Yemeni Corner and Hajr-e-Aswad
-      on every round.
-    </p>
+    <div class="brand">${labels.cover_brand}</div>
+    <h1>${labels.cover_title}</h1>
+    <p class="subtitle">${labels.cover_subtitle}</p>
     <div class="arabic-cover">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
-    <div class="footer-note">easyumrah — a simple guide for pilgrims</div>
+    <div class="footer-note">${labels.cover_footer}</div>
   </div>
 
-  ${TAWAAF_DUAS.map(roundSection).join("\n")}
-  ${cornerSection(YEMENI_CORNER_DUA)}
+  ${TAWAAF_DUAS.map((d) => roundSection(d, lang, labels)).join("\n")}
+  ${cornerSection(YEMENI_CORNER_DUA, lang, labels)}
 </body>
 </html>
 `;
+}
 
 const REPO_ROOT = path.resolve(__dirname, "..");
-const htmlPath = path.join(os.tmpdir(), `easyumrah-print-${process.pid}.html`);
-const pdfPath = path.join(REPO_ROOT, "easyumrah-tawaaf-duas.pdf");
-
-fs.writeFileSync(htmlPath, html, "utf8");
-console.log(`Wrote HTML: ${htmlPath}`);
 
 const chromiumCandidates = [
   process.env.CHROMIUM_BIN,
@@ -259,18 +307,25 @@ if (!chromium) {
   );
   process.exit(1);
 }
-
 console.log(`Using Chromium: ${chromium}`);
 
-const args = [
-  "--headless=new",
-  "--no-sandbox",
-  "--disable-gpu",
-  `--print-to-pdf=${pdfPath}`,
-  "--no-pdf-header-footer",
-  "--virtual-time-budget=10000",
-  `file://${htmlPath}`,
-];
+function renderPdf(lang, outFilename) {
+  const html = buildHtml(lang);
+  const htmlPath = path.join(os.tmpdir(), `easyumrah-print-${lang}-${process.pid}.html`);
+  const pdfPath = path.join(REPO_ROOT, outFilename);
+  fs.writeFileSync(htmlPath, html, "utf8");
+  const args = [
+    "--headless=new",
+    "--no-sandbox",
+    "--disable-gpu",
+    `--print-to-pdf=${pdfPath}`,
+    "--no-pdf-header-footer",
+    "--virtual-time-budget=10000",
+    `file://${htmlPath}`,
+  ];
+  execFileSync(chromium, args, { stdio: "inherit" });
+  console.log(`Wrote PDF: ${pdfPath}`);
+}
 
-execFileSync(chromium, args, { stdio: "inherit" });
-console.log(`Wrote PDF: ${pdfPath}`);
+renderPdf("en", "easyumrah-tawaaf-duas-en.pdf");
+renderPdf("ur", "easyumrah-tawaaf-duas-ur.pdf");

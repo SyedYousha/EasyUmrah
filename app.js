@@ -19,7 +19,13 @@
     completeView: document.getElementById("complete-view"),
     langBtns: document.querySelectorAll(".lang-btn"),
     themeToggle: document.getElementById("theme-toggle"),
-    themeIcon: document.querySelector(".theme-icon")
+    themeIcon: document.querySelector(".theme-icon"),
+    pdfLink: document.getElementById("pdf-link")
+  };
+
+  const PDF_BY_LANG = {
+    english: "easyumrah-tawaaf-duas-en.pdf",
+    urdu: "easyumrah-tawaaf-duas-ur.pdf"
   };
 
   function renderParagraphs(container, text) {
@@ -95,6 +101,9 @@
     els.langBtns.forEach((btn) => {
       btn.classList.toggle("active", btn.dataset.lang === lang);
     });
+    if (els.pdfLink && PDF_BY_LANG[lang]) {
+      els.pdfLink.href = PDF_BY_LANG[lang];
+    }
     render();
   }
 
