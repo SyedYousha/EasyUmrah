@@ -34,11 +34,11 @@
 
   const POST_LABELS = {
     english: {
-      heading: "Additional Duas After Tawaaf",
+      heading: "Additional Duas",
       intro: "Duas that can be recited at these specific places, if the opportunity arises."
     },
     urdu: {
-      heading: "طواف کے بعد کی دعائیں",
+      heading: "اضافی دعائیں",
       intro: "اگر موقع ملے تو یہ دعائیں مخصوص مقامات پر پڑھی جا سکتی ہیں۔"
     }
   };

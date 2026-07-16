@@ -32,7 +32,7 @@ const LABELS = {
     corner_badge: "Recite on every round",
     corner_title: "Between the Yemeni Corner & Hajr-e-Aswad",
     translation_label: "Translation",
-    post_badge: "After tawaaf",
+    post_badge: "Additional dua",
     reminder_badge: "Complete Your Tawaaf",
     reminder_title: "Pray 2 Rakaat",
     reminder_body:
@@ -49,7 +49,7 @@ const LABELS = {
     corner_badge: "ہر چکر میں پڑھی جائے",
     corner_title: "رکنِ یمانی اور حجرِ اسود کے درمیان",
     translation_label: "ترجمہ",
-    post_badge: "طواف کے بعد",
+    post_badge: "اضافی دعا",
     reminder_badge: "طواف مکمل کریں",
     reminder_title: "2 رکعت نماز ادا کریں",
     reminder_body:
