@@ -373,6 +373,76 @@ body {
   min-width: 180px;
 }
 
+.post-tawaaf {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+  text-align: left;
+}
+
+.post-tawaaf-heading {
+  margin: 0 0 0.5rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-align: center;
+}
+
+.post-tawaaf-intro {
+  margin: 0 0 1.5rem;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.post-tawaaf-dua {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.25rem 1.25rem 1.5rem;
+  margin-bottom: 1.25rem;
+  background: var(--bg);
+}
+
+.post-tawaaf-dua:last-child {
+  margin-bottom: 0;
+}
+
+.post-tawaaf-title {
+  margin: 0 0 0.25rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.post-tawaaf-location {
+  margin: 0 0 1rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.post-arabic {
+  font-size: 1.55rem !important;
+  line-height: 2.2 !important;
+  min-height: 0 !important;
+  margin-bottom: 1rem;
+}
+
+.post-translation {
+  font-size: 0.98rem;
+}
+
+.post-translation:not(:empty) {
+  padding-top: 0.75rem;
+  border-top: 1px dashed var(--border);
+}
+
+@media (max-width: 480px) {
+  .post-arabic {
+    font-size: 1.35rem !important;
+  }
+}
+
 .hidden {
   display: none !important;
 }

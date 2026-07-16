@@ -11,7 +11,7 @@ const path = require("path");
 const { execFileSync } = require("child_process");
 const os = require("os");
 
-const { TAWAAF_DUAS, YEMENI_CORNER_DUA } = require("../data/tawaaf-duas.js");
+const { TAWAAF_DUAS, YEMENI_CORNER_DUA, POST_TAWAAF_DUAS } = require("../data/tawaaf-duas.js");
 
 const FONT_PATH = path.resolve(__dirname, "..", "fonts", "UthmanicHafs.woff2");
 const FONT_BASE64 = fs.readFileSync(FONT_PATH).toString("base64");
@@ -25,25 +25,27 @@ const LABELS = {
     cover_brand: "EasyUmrah",
     cover_title: "Tawaaf Duas",
     cover_subtitle:
-      "Duas for each of the seven rounds (shawt) of tawaaf, with the dua recited between the Yemeni Corner and Hajr-e-Aswad on every round.",
+      "Duas for each of the seven rounds (shawt) of tawaaf, with the dua recited between the Yemeni Corner and Hajr-e-Aswad on every round, and additional duas for after tawaaf.",
     cover_footer: "easyumrah — a simple guide for pilgrims",
     round_of: (n) => `Round ${n} / 7`,
     round_title: (n) => `${ORDINALS[n - 1] || "Round " + n} Round`,
     corner_badge: "Recite on every round",
     corner_title: "Between the Yemeni Corner & Hajr-e-Aswad",
     translation_label: "Translation",
+    post_badge: "After tawaaf",
   },
   ur: {
     cover_brand: "EasyUmrah",
     cover_title: "طواف کی دعائیں",
     cover_subtitle:
-      "طواف کے سات چکروں میں سے ہر چکر کی دعا، اور رکنِ یمانی اور حجرِ اسود کے درمیان ہر چکر میں پڑھی جانے والی دعا۔",
+      "طواف کے سات چکروں میں سے ہر چکر کی دعا، رکنِ یمانی اور حجرِ اسود کے درمیان ہر چکر میں پڑھی جانے والی دعا، اور طواف کے بعد کی دعائیں۔",
     cover_footer: "easyumrah — حجاج کے لیے ایک سادہ رہنما",
     round_of: (n) => `چکر ${n} / 7`,
     round_title: (n) => `${n === 1 ? "پہلا" : n === 2 ? "دوسرا" : n === 3 ? "تیسرا" : n === 4 ? "چوتھا" : n === 5 ? "پانچواں" : n === 6 ? "چھٹا" : "ساتواں"} چکر`,
     corner_badge: "ہر چکر میں پڑھی جائے",
     corner_title: "رکنِ یمانی اور حجرِ اسود کے درمیان",
     translation_label: "ترجمہ",
+    post_badge: "طواف کے بعد",
   },
 };
 
@@ -92,6 +94,29 @@ function cornerSection(dua, lang, labels) {
       <header class="round-header">
         <div class="round-badge corner-badge">${labels.corner_badge}</div>
         <h2>${labels.corner_title}</h2>
+      </header>
+      <div class="arabic" dir="rtl" lang="ar">
+        ${paragraphsToHtml(dua.arabic)}
+      </div>
+      <div class="${translationClass}" ${lang === "ur" ? 'dir="rtl" lang="ur"' : 'lang="en"'}>
+        <div class="translation-label">${labels.translation_label}</div>
+        ${paragraphsToHtml(translation)}
+      </div>
+    </section>
+  `;
+}
+
+function postSection(dua, lang, labels) {
+  const translation = lang === "ur" ? dua.urdu : dua.english;
+  const translationClass = lang === "ur" ? "translation urdu" : "translation";
+  const title = lang === "ur" ? dua.title_ur : dua.title_en;
+  const location = lang === "ur" ? dua.location_ur : dua.location_en;
+  return `
+    <section class="round post">
+      <header class="round-header">
+        <div class="round-badge post-badge">${labels.post_badge}</div>
+        <h2>${escapeHtml(title)}</h2>
+        <p class="post-location">${escapeHtml(location)}</p>
       </header>
       <div class="arabic" dir="rtl" lang="ar">
         ${paragraphsToHtml(dua.arabic)}
@@ -210,6 +235,16 @@ function buildHtml(lang) {
       background: #fdf5e8;
       color: #a26b1a;
     }
+    .post-badge {
+      background: #e9f0fb;
+      color: #1e5091;
+    }
+    .post-location {
+      margin: 3mm 0 0;
+      font-size: 10pt;
+      color: #666;
+      font-style: italic;
+    }
     .round-header h2 {
       font-size: ${isUrdu ? "22pt" : "20pt"};
       margin: 0;
@@ -278,6 +313,7 @@ function buildHtml(lang) {
 
   ${TAWAAF_DUAS.map((d) => roundSection(d, lang, labels)).join("\n")}
   ${cornerSection(YEMENI_CORNER_DUA, lang, labels)}
+  ${POST_TAWAAF_DUAS.map((d) => postSection(d, lang, labels)).join("\n")}
 </body>
 </html>
 `;

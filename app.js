@@ -20,7 +20,21 @@
     langBtns: document.querySelectorAll(".lang-btn"),
     themeToggle: document.getElementById("theme-toggle"),
     themeIcon: document.querySelector(".theme-icon"),
-    pdfLink: document.getElementById("pdf-link")
+    pdfLink: document.getElementById("pdf-link"),
+    postTawaafHeading: document.getElementById("post-tawaaf-heading"),
+    postTawaafIntro: document.getElementById("post-tawaaf-intro"),
+    postTawaafList: document.getElementById("post-tawaaf-list")
+  };
+
+  const POST_LABELS = {
+    english: {
+      heading: "Additional Duas After Tawaaf",
+      intro: "Duas that can be recited at these specific places, if the opportunity arises."
+    },
+    urdu: {
+      heading: "طواف کے بعد کی دعائیں",
+      intro: "اگر موقع ملے تو یہ دعائیں مخصوص مقامات پر پڑھی جا سکتی ہیں۔"
+    }
   };
 
   const PDF_BY_LANG = {
@@ -63,9 +77,60 @@
     renderParagraphs(els.cornerTranslation, cornerTranslation);
     applyTranslationLang(els.cornerTranslation);
 
+    renderPostTawaaf();
+
     els.prevBtn.disabled = state.round === 1;
     els.nextBtn.textContent = state.round === TOTAL_ROUNDS ? "Complete ✓" : "Next →";
     window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  function renderPostTawaaf() {
+    if (!els.postTawaafList || typeof POST_TAWAAF_DUAS === "undefined") return;
+    const isUrdu = state.language === "urdu";
+    const labels = POST_LABELS[state.language] || POST_LABELS.english;
+    els.postTawaafHeading.textContent = labels.heading;
+    els.postTawaafIntro.textContent = labels.intro;
+    els.postTawaafList.innerHTML = "";
+
+    POST_TAWAAF_DUAS.forEach((dua) => {
+      const article = document.createElement("article");
+      article.className = "post-tawaaf-dua";
+
+      const title = document.createElement("h4");
+      title.className = "post-tawaaf-title";
+      title.textContent = isUrdu ? dua.title_ur : dua.title_en;
+      if (isUrdu) {
+        title.setAttribute("dir", "rtl");
+        title.setAttribute("lang", "ur");
+      }
+      article.appendChild(title);
+
+      const location = document.createElement("p");
+      location.className = "post-tawaaf-location";
+      location.textContent = isUrdu ? dua.location_ur : dua.location_en;
+      if (isUrdu) {
+        location.setAttribute("dir", "rtl");
+        location.setAttribute("lang", "ur");
+      }
+      article.appendChild(location);
+
+      const arabic = document.createElement("div");
+      arabic.className = "dua-arabic post-arabic";
+      arabic.setAttribute("dir", "rtl");
+      arabic.setAttribute("lang", "ar");
+      article.appendChild(arabic);
+      renderParagraphs(arabic, dua.arabic);
+
+      const translation = document.createElement("div");
+      translation.className = "dua-translation post-translation";
+      article.appendChild(translation);
+      renderParagraphs(translation, isUrdu ? dua.urdu : dua.english);
+      translation.classList.toggle("urdu", isUrdu);
+      translation.setAttribute("lang", isUrdu ? "ur" : "en");
+      translation.setAttribute("dir", isUrdu ? "rtl" : "ltr");
+
+      els.postTawaafList.appendChild(article);
+    });
   }
 
   function goNext() {

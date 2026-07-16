@@ -13,7 +13,7 @@ const YEMENI_CORNER_DUA = {
 const TAWAAF_DUAS = [
   {
     round: 1,
-    arabic: `سُبْحَانَ اللَّهِ وَالْحَمْدُ لِلَّهِ وَلَا اِلَهَ اِلَّا اللَّهُ وَاللَّهُ اَكْبَرُ وَلَا حَوْلَ وَلَا قُوَّةَ اِلَّا بِاللَّهِ الْعَلِيِّ الْعَظِيْمِ ، وَالصَّلٰوةُ وَالسَّلَامُ عَلَى رَسُوْلِ اللَّهِ ﷺ ، اَللّٰهُمَّ اِيْمَانًا بِكَ وَتَصْدِيْقًا بِكَلِمَاتِكَ وَوَفَاءً بِعَهْدِكَ وَاِتِّبَاعًا لِسُنَّتِ نَبِيِّكَ وَحَبِيْبِكَ سَيِّدِنَا مُحَمَّدٍ ﷺ .
+    arabic: `سُبْحَانَ اللّٰهِ وَالْحَمْدُ لِلَّهِ وَلَا اِلٰهَ اِلَّا اللّٰهُ وَاللّٰهُ اَكْبَرُ وَلَا حَوْلَ وَلَا قُوَّةَ اِلَّا بِاللّٰهِ الْعَلِيِّ الْعَظِيْمِ ، وَالصَّلٰوةُ وَالسَّلَامُ عَلَى رَسُوْلِ اللّٰهِ ﷺ ، اَللّٰهُمَّ اِيْمَانًا بِكَ وَتَصْدِيْقًا بِكَلِمَاتِكَ وَوَفَاءً بِعَهْدِكَ وَاِتِّبَاعًا لِسُنَّتِ نَبِيِّكَ وَحَبِيْبِكَ سَيِّدِنَا مُحَمَّدٍ ﷺ .
 
 اَللّٰهُمَّ اِنِّيْ اَسْئَلُكَ الْعَفْوَ وَالْعَافِيَةَ وَالْمُعَافَاةَ الدَّائِمَةَ فِي الدِّيْنِ وَالدُّنْيَا وَالْآخِرَةِ وَالْفَوْزَ بِالْجَنَّةِ وَالنَّجَاةَ مِنَ النَّارِ .`,
     english: `Glory be to Allah, and Praise be to Allah. There is no god but Allah. Allah is the Greatest. There is no power nor strength except by Allah, The Exalted, The Great. Peace and blessings be upon the Messenger of Allah ﷺ. O Allah! By my faith in Thee, and by my belief in Thy Words, and in fulfillment of the vows I made to Thee, and following the sunnah of Thy Prophet and Thy beloved, our Master Muhammad ﷺ. O Allah! Truly I ask Thee for pardon, well-being, and everlasting soundness in faith, in this world and in the Hereafter, and for success in Paradise and deliverance from the Fire.`,
@@ -91,6 +91,30 @@ const TAWAAF_DUAS = [
   }
 ];
 
+// Duas recited after tawaaf at specific locations, if the opportunity arises.
+const POST_TAWAAF_DUAS = [
+  {
+    id: "multazam",
+    title_en: "At Multazam",
+    title_ur: "ملتزم پر پڑھنے کی دعا",
+    location_en: "Between the Kaaba door and Hajr-e-Aswad",
+    location_ur: "خانہ کعبہ کے دروازہ اور حجرِ اسود کے درمیان",
+    arabic: `اَللّٰهُمَّ اِنَّ هٰذَا بَيْتُكَ الَّذِيْ جَعَلْتَهٗ مُبَارَكًا وَّهُدًى لِلْعَالَمِيْنَ ، اَللّٰهُمَّ كَمَا هَدَيْتَنِيْ لَهٗ فَتَقَبَّلْ مِنِّيْ وَلَا تَجْعَلْ هٰذَا آخِرَ الْعَهْدِ مِنْ بَيْتِكَ وَارْزُقْنِي الْعَوْدَ اِلَيْهِ حَتّٰى تَرْضٰى عَنِّيْ بِرَحْمَتِكَ يَا اَرْحَمَ الرَّاحِمِيْنَ .`,
+    english: `O Allah! Truly this is Your House which You have made blessed and a guidance for all the worlds. O Allah! Just as You have guided me to it, accept from me, and do not make this the last covenant with Your House, and grant me the return to it until You are pleased with me — by Your mercy, O Most Merciful of the merciful.`,
+    urdu: `اے اللہ بیشک یہ تیرا وہ گھر ہے، جس کو تو نے تمام عالم کے لئے برکت اور ہدایت کا ذریعہ بنایا ہے، اے اللہ جس طرح تو نے مجھے اس حج کے لئے ہدایت دی اس طرح میری طرف سے قبول فرما، اور میرے اس سفر کو اپنے گھر کا آخری سفر نہ بنا، اور دوبارہ لوٹ کر آنا نصیب فرما یہاں تک کہ تو مجھ سے راضی ہو جائے، اے ارحم الراحمین اپنی رحمت سے میری دعا قبول فرما۔`
+  },
+  {
+    id: "meezab",
+    title_en: "Under Meezab-e-Rahmat",
+    title_ur: "میزابِ رحمت کے نیچے پڑھنے کی دعا",
+    location_en: "The rain-spout of mercy on the Kaaba",
+    location_ur: "بیتُ اللہ کے پرنالے کے نیچے",
+    arabic: `اَللّٰهُمَّ اِنِّيْ اَسْئَلُكَ اِيْمَانًا لَا يَزُوْلُ وَيَقِيْنًا لَا يَنْفَدُ وَمُرَافَقَةَ نَبِيِّكَ ﷺ ، اَللّٰهُمَّ اَظِلَّنِيْ تَحْتَ ظِلِّ عَرْشِكَ يَوْمَ لَا ظِلَّ اِلَّا ظِلُّ عَرْشِكَ وَاسْقِنِيْ بِكَاْسِ مُحَمَّدٍ ﷺ شَرْبَةً لَا اَظْمَاُ بَعْدَهَا اَبَدًا .`,
+    english: `O Allah! Truly I ask You for faith that never wavers, certainty that never runs out, and the companionship of Your Prophet ﷺ. O Allah! Shade me under the shade of Your Throne on the Day when there is no shade except the shade of Your Throne. And give me to drink from the cup of Muhammad ﷺ a drink after which I will never thirst again.`,
+    urdu: `اے اللہ میں تجھ سے ایسا ایمان مانگتا ہوں جو کبھی ختم نہ ہو، اور یقین مانگتا ہوں جو کبھی زائل نہ ہو، اور تیرے نبی صلی اللہ علیہ وسلم کا ساتھ مانگتا ہوں، اے اللہ مجھے اس دن اپنے عرش کا سایہ عطا فرما، جس دن عرش کے سایہ کے علاوہ کوئی سایہ نہ ہوگا، اور محمد صلی اللہ علیہ وسلم کے پیالے سے ایسا شربت پلا دے کہ اس کے بعد کبھی پیاس نہ لگے۔`
+  }
+];
+
 if (typeof module !== "undefined" && module.exports) {
-  module.exports = { TAWAAF_DUAS, YEMENI_CORNER_DUA };
+  module.exports = { TAWAAF_DUAS, YEMENI_CORNER_DUA, POST_TAWAAF_DUAS };
 }
