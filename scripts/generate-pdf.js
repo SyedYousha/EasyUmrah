@@ -33,6 +33,10 @@ const LABELS = {
     corner_title: "Between the Yemeni Corner & Hajr-e-Aswad",
     translation_label: "Translation",
     post_badge: "After tawaaf",
+    reminder_badge: "Complete Your Tawaaf",
+    reminder_title: "Pray 2 Rakaat",
+    reminder_body:
+      "After completing the seven rounds, pray 2 rakaat behind Maqam-e-Ibrahim if possible. If it's too crowded, pray 2 rakaat anywhere in the Masjid to complete your tawaaf.",
   },
   ur: {
     cover_brand: "EasyUmrah",
@@ -46,6 +50,10 @@ const LABELS = {
     corner_title: "رکنِ یمانی اور حجرِ اسود کے درمیان",
     translation_label: "ترجمہ",
     post_badge: "طواف کے بعد",
+    reminder_badge: "طواف مکمل کریں",
+    reminder_title: "2 رکعت نماز ادا کریں",
+    reminder_body:
+      "سات چکر مکمل کرنے کے بعد اگر ممکن ہو تو مقامِ ابراہیم کے پیچھے 2 رکعت نماز ادا کریں۔ اگر رش کی وجہ سے وہاں ممکن نہ ہو تو مسجد میں کہیں بھی 2 رکعت ادا کر کے اپنا طواف مکمل کریں۔",
   },
 };
 
@@ -125,6 +133,19 @@ function postSection(dua, lang, labels) {
         <div class="translation-label">${labels.translation_label}</div>
         ${paragraphsToHtml(translation)}
       </div>
+    </section>
+  `;
+}
+
+function reminderSection(lang, labels) {
+  const isUrdu = lang === "ur";
+  return `
+    <section class="round reminder-section" ${isUrdu ? 'dir="rtl" lang="ur"' : 'lang="en"'}>
+      <header class="round-header">
+        <div class="round-badge reminder-badge-pdf">${labels.reminder_badge}</div>
+        <h2>${escapeHtml(labels.reminder_title)}</h2>
+      </header>
+      <p class="reminder-body-pdf">${escapeHtml(labels.reminder_body)}</p>
     </section>
   `;
 }
@@ -245,6 +266,25 @@ function buildHtml(lang) {
       color: #666;
       font-style: italic;
     }
+    .reminder-badge-pdf {
+      background: #edf7f2;
+      color: #0a7a5c;
+    }
+    .reminder-section .round-header h2 {
+      font-size: ${isUrdu ? "22pt" : "22pt"};
+    }
+    .reminder-body-pdf {
+      font-size: ${isUrdu ? "13pt" : "11.5pt"};
+      line-height: ${isUrdu ? "2.2" : "1.7"};
+      color: #2a2a2a;
+      max-width: 150mm;
+      margin: 6mm auto 0;
+      background: #faf7ef;
+      border-left: 3px solid #0a7a5c;
+      padding: 6mm 8mm;
+      border-radius: 4px;
+      ${isUrdu ? 'font-family: "Noto Nastaliq Urdu", serif; border-left: none; border-right: 3px solid #0a7a5c; text-align: right;' : ''}
+    }
     .round-header h2 {
       font-size: ${isUrdu ? "22pt" : "20pt"};
       margin: 0;
@@ -311,9 +351,11 @@ function buildHtml(lang) {
     <div class="footer-note">${labels.cover_footer}</div>
   </div>
 
-  ${TAWAAF_DUAS.map((d) => roundSection(d, lang, labels)).join("\n")}
-  ${cornerSection(YEMENI_CORNER_DUA, lang, labels)}
+  ${roundSection(TAWAAF_DUAS[0], lang, labels)}
   ${POST_TAWAAF_DUAS.map((d) => postSection(d, lang, labels)).join("\n")}
+  ${TAWAAF_DUAS.slice(1).map((d) => roundSection(d, lang, labels)).join("\n")}
+  ${cornerSection(YEMENI_CORNER_DUA, lang, labels)}
+  ${reminderSection(lang, labels)}
 </body>
 </html>
 `;

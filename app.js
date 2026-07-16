@@ -21,9 +21,15 @@
     themeToggle: document.getElementById("theme-toggle"),
     themeIcon: document.querySelector(".theme-icon"),
     pdfLink: document.getElementById("pdf-link"),
+    postTawaafContainer: document.getElementById("post-tawaaf-container"),
     postTawaafHeading: document.getElementById("post-tawaaf-heading"),
     postTawaafIntro: document.getElementById("post-tawaaf-intro"),
-    postTawaafList: document.getElementById("post-tawaaf-list")
+    postTawaafList: document.getElementById("post-tawaaf-list"),
+    completeTitle: document.getElementById("complete-title"),
+    completeMessage: document.getElementById("complete-message"),
+    reminderBadge: document.getElementById("reminder-badge"),
+    reminderHeading: document.getElementById("reminder-heading"),
+    reminderBody: document.getElementById("reminder-body")
   };
 
   const POST_LABELS = {
@@ -34,6 +40,25 @@
     urdu: {
       heading: "طواف کے بعد کی دعائیں",
       intro: "اگر موقع ملے تو یہ دعائیں مخصوص مقامات پر پڑھی جا سکتی ہیں۔"
+    }
+  };
+
+  const COMPLETE_LABELS = {
+    english: {
+      title: "Tawaaf Complete",
+      message: "May Allah accept your worship.",
+      reminderBadge: "Next step",
+      reminderHeading: "Pray 2 Rakaat",
+      reminderBody: "If possible, pray 2 rakaat behind Maqam-e-Ibrahim to complete your tawaaf. If it's too crowded, pray 2 rakaat anywhere in the Masjid.",
+      resetBtn: "Start Again"
+    },
+    urdu: {
+      title: "طواف مکمل",
+      message: "اللہ آپ کی عبادت قبول فرمائے۔",
+      reminderBadge: "اگلا مرحلہ",
+      reminderHeading: "2 رکعت نماز ادا کریں",
+      reminderBody: "اگر ممکن ہو تو مقامِ ابراہیم کے پیچھے 2 رکعت نماز ادا کریں۔ اگر رش کی وجہ سے وہاں ممکن نہ ہو تو مسجد میں کہیں بھی 2 رکعت ادا کر کے اپنا طواف مکمل کریں۔",
+      resetBtn: "دوبارہ شروع کریں"
     }
   };
 
@@ -86,6 +111,14 @@
 
   function renderPostTawaaf() {
     if (!els.postTawaafList || typeof POST_TAWAAF_DUAS === "undefined") return;
+
+    // Only show these on Round 1
+    if (state.round !== 1) {
+      els.postTawaafContainer.classList.add("hidden");
+      return;
+    }
+    els.postTawaafContainer.classList.remove("hidden");
+
     const isUrdu = state.language === "urdu";
     const labels = POST_LABELS[state.language] || POST_LABELS.english;
     els.postTawaafHeading.textContent = labels.heading;
@@ -161,6 +194,24 @@
     render();
   }
 
+  function renderCompleteLabels() {
+    const labels = COMPLETE_LABELS[state.language] || COMPLETE_LABELS.english;
+    const isUrdu = state.language === "urdu";
+    els.completeTitle.textContent = labels.title;
+    els.completeMessage.textContent = labels.message;
+    els.reminderBadge.textContent = labels.reminderBadge;
+    els.reminderHeading.textContent = labels.reminderHeading;
+    els.reminderBody.textContent = labels.reminderBody;
+    els.resetBtn.textContent = labels.resetBtn;
+    // RTL for Urdu
+    [els.completeTitle, els.completeMessage, els.reminderHeading, els.reminderBody, els.reminderBadge].forEach((el) => {
+      if (!el) return;
+      el.setAttribute("dir", isUrdu ? "rtl" : "ltr");
+      el.setAttribute("lang", isUrdu ? "ur" : "en");
+      el.classList.toggle("urdu-text", isUrdu);
+    });
+  }
+
   function setLanguage(lang) {
     state.language = lang;
     els.langBtns.forEach((btn) => {
@@ -170,6 +221,7 @@
       els.pdfLink.href = PDF_BY_LANG[lang];
     }
     render();
+    renderCompleteLabels();
   }
 
   function initTheme() {
@@ -208,4 +260,5 @@
 
   initTheme();
   render();
+  renderCompleteLabels();
 })();
