@@ -500,6 +500,189 @@ body {
   }
 }
 
+/* ---------- View tabs ---------- */
+
+.view-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem 0;
+}
+
+.view-tab {
+  padding: 0.5rem 1.1rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.view-tab:hover {
+  color: var(--text);
+}
+
+.view-tab.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: white;
+}
+
+/* ---------- Madinah guide ---------- */
+
+.madinah-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 2rem;
+  width: 100%;
+  max-width: 640px;
+  align-self: flex-start;
+}
+
+.madinah-title {
+  margin: 0 0 0.5rem;
+  font-size: 1.5rem;
+  color: var(--accent);
+  text-align: center;
+}
+
+.madinah-intro {
+  margin: 0 0 1.5rem;
+  color: var(--text-muted);
+  text-align: center;
+  font-size: 0.98rem;
+}
+
+.madinah-section {
+  margin-top: 1.75rem;
+}
+
+.madinah-section-heading {
+  margin: 0 0 0.75rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.madinah-item {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg);
+  margin-bottom: 0.75rem;
+}
+
+.madinah-item summary {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  padding: 0.9rem 2.5rem 0.9rem 1.1rem;
+  cursor: pointer;
+  list-style: none;
+  position: relative;
+}
+
+.madinah-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.madinah-item summary::after {
+  content: "+";
+  position: absolute;
+  inset-inline-end: 1.1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.3rem;
+  color: var(--accent);
+}
+
+.madinah-item[open] summary::after {
+  content: "−";
+}
+
+.madinah-item[open] summary {
+  border-bottom: 1px solid var(--border);
+}
+
+.madinah-item-title {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.madinah-item-subtitle {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.madinah-item-body {
+  padding: 1rem 1.1rem 1.25rem;
+}
+
+.madinah-label {
+  margin: 0.5rem 0 0.6rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.madinah-steps {
+  margin: 0 0 1rem;
+  padding-inline-start: 1.25rem;
+}
+
+.madinah-steps li {
+  margin-bottom: 0.4rem;
+}
+
+.madinah-note {
+  margin: 0 0 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  background: rgba(10, 122, 92, 0.08);
+  border: 1px solid rgba(10, 122, 92, 0.25);
+  font-size: 0.92rem;
+}
+
+.madinah-item .post-tawaaf-dua {
+  background: var(--surface);
+  margin-bottom: 0.75rem;
+}
+
+.dua-reference {
+  margin: 0.75rem 0 0;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+/* Urdu: Nastaliq font and relaxed line height for the guide text. */
+.urdu-view .madinah-title,
+.urdu-view .madinah-intro,
+.urdu-view .madinah-section-heading,
+.urdu-view .madinah-item summary,
+.urdu-view .madinah-label,
+.urdu-view .madinah-steps,
+.urdu-view .madinah-note,
+.urdu-view .post-tawaaf-title {
+  font-family: "Noto Nastaliq Urdu", serif;
+  line-height: 2.1;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+.urdu-view .madinah-section-heading,
+.urdu-view .madinah-label {
+  font-size: 0.95rem;
+}
+
 .hidden {
   display: none !important;
 }
@@ -524,7 +707,8 @@ body {
     font-size: 1.2rem;
   }
   .tawaaf-card,
-  .complete-card {
+  .complete-card,
+  .madinah-card {
     padding: 1.5rem 1.25rem;
   }
   .dua-arabic {

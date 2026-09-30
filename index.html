@@ -43,7 +43,18 @@
     </div>
   </header>
 
+  <nav class="view-tabs" role="tablist" aria-label="Guide section">
+    <a href="#tawaaf" class="view-tab active" role="tab" data-view="tawaaf" id="tab-tawaaf">Tawaaf Duas</a>
+    <a href="#madinah" class="view-tab" role="tab" data-view="madinah" id="tab-madinah">Madinah</a>
+  </nav>
+
   <main class="page">
+    <section class="madinah-card hidden" id="madinah-view" aria-labelledby="madinah-title">
+      <h2 class="madinah-title" id="madinah-title">Visiting Madinah</h2>
+      <p class="madinah-intro" id="madinah-intro"></p>
+      <div id="madinah-sections"></div>
+    </section>
+
     <section class="tawaaf-card" id="dua-view">
       <div class="round-counter" aria-live="polite">
         Round <span id="current-round">1</span> / 7
@@ -111,6 +122,7 @@
   </footer>
 
   <script src="data/tawaaf-duas.js"></script>
+  <script src="data/madinah.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

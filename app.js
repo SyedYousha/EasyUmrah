@@ -3,8 +3,13 @@
 
   const state = {
     round: 1,
-    language: "english"
+    language: "english",
+    view: "tawaaf",
+    complete: false
   };
+
+  // Madinah cards the user has expanded, kept open across language switches.
+  const openMadinahItems = new Set();
 
   const els = {
     currentRound: document.getElementById("current-round"),
@@ -29,7 +34,27 @@
     completeMessage: document.getElementById("complete-message"),
     reminderBadge: document.getElementById("reminder-badge"),
     reminderHeading: document.getElementById("reminder-heading"),
-    reminderBody: document.getElementById("reminder-body")
+    reminderBody: document.getElementById("reminder-body"),
+    viewTabs: document.querySelectorAll(".view-tab"),
+    madinahView: document.getElementById("madinah-view"),
+    madinahTitle: document.getElementById("madinah-title"),
+    madinahIntro: document.getElementById("madinah-intro"),
+    madinahSections: document.getElementById("madinah-sections")
+  };
+
+  const TAB_LABELS = {
+    english: { tawaaf: "Tawaaf Duas", madinah: "Madinah" },
+    urdu: { tawaaf: "طواف کی دعائیں", madinah: "مدینہ منورہ" }
+  };
+
+  const MADINAH_LABELS = {
+    english: { steps: "What to do", duas: "Duas", note: "Note" },
+    urdu: { steps: "کیا کریں", duas: "دعائیں", note: "نوٹ" }
+  };
+
+  const PAGE_TITLES = {
+    tawaaf: "EasyUmrah — Tawaaf Duas",
+    madinah: "EasyUmrah — Visiting Madinah"
   };
 
   const POST_LABELS = {
@@ -126,44 +151,191 @@
     els.postTawaafList.innerHTML = "";
 
     POST_TAWAAF_DUAS.forEach((dua) => {
-      const article = document.createElement("article");
-      article.className = "post-tawaaf-dua";
+      els.postTawaafList.appendChild(buildDuaArticle(dua, dua.location_en, dua.location_ur));
+    });
+  }
 
-      const title = document.createElement("h4");
-      title.className = "post-tawaaf-title";
-      title.textContent = isUrdu ? dua.title_ur : dua.title_en;
-      if (isUrdu) {
-        title.setAttribute("dir", "rtl");
-        title.setAttribute("lang", "ur");
-      }
-      article.appendChild(title);
+  function setTextLang(el, isUrdu) {
+    if (isUrdu) {
+      el.setAttribute("dir", "rtl");
+      el.setAttribute("lang", "ur");
+    }
+  }
 
+  // Card with title, optional subtitle, Arabic text and translation. Empty
+  // Arabic/translation fields fall back to the CSS placeholders.
+  function buildDuaArticle(dua, subtitleEn, subtitleUr) {
+    const isUrdu = state.language === "urdu";
+    const article = document.createElement("article");
+    article.className = "post-tawaaf-dua";
+
+    const title = document.createElement("h4");
+    title.className = "post-tawaaf-title";
+    title.textContent = isUrdu ? dua.title_ur : dua.title_en;
+    setTextLang(title, isUrdu);
+    article.appendChild(title);
+
+    const subtitle = isUrdu ? subtitleUr : subtitleEn;
+    if (subtitle) {
       const location = document.createElement("p");
       location.className = "post-tawaaf-location";
-      location.textContent = isUrdu ? dua.location_ur : dua.location_en;
-      if (isUrdu) {
-        location.setAttribute("dir", "rtl");
-        location.setAttribute("lang", "ur");
-      }
+      location.textContent = subtitle;
+      setTextLang(location, isUrdu);
       article.appendChild(location);
+    }
 
-      const arabic = document.createElement("div");
-      arabic.className = "dua-arabic post-arabic";
-      arabic.setAttribute("dir", "rtl");
-      arabic.setAttribute("lang", "ar");
-      article.appendChild(arabic);
-      renderParagraphs(arabic, dua.arabic);
+    const arabic = document.createElement("div");
+    arabic.className = "dua-arabic post-arabic";
+    arabic.setAttribute("dir", "rtl");
+    arabic.setAttribute("lang", "ar");
+    article.appendChild(arabic);
+    renderParagraphs(arabic, dua.arabic);
 
-      const translation = document.createElement("div");
-      translation.className = "dua-translation post-translation";
-      article.appendChild(translation);
-      renderParagraphs(translation, isUrdu ? dua.urdu : dua.english);
-      translation.classList.toggle("urdu", isUrdu);
-      translation.setAttribute("lang", isUrdu ? "ur" : "en");
-      translation.setAttribute("dir", isUrdu ? "rtl" : "ltr");
+    const translation = document.createElement("div");
+    translation.className = "dua-translation post-translation";
+    article.appendChild(translation);
+    renderParagraphs(translation, isUrdu ? dua.urdu : dua.english);
+    translation.classList.toggle("urdu", isUrdu);
+    translation.setAttribute("lang", isUrdu ? "ur" : "en");
+    translation.setAttribute("dir", isUrdu ? "rtl" : "ltr");
 
-      els.postTawaafList.appendChild(article);
+    if (dua.reference) {
+      const ref = document.createElement("p");
+      ref.className = "dua-reference";
+      ref.textContent = dua.reference;
+      article.appendChild(ref);
+    }
+
+    return article;
+  }
+
+  function renderMadinah() {
+    if (!els.madinahSections || typeof MADINAH_GUIDE === "undefined") return;
+
+    const isUrdu = state.language === "urdu";
+    const labels = MADINAH_LABELS[state.language] || MADINAH_LABELS.english;
+    const pick = (obj, key) => (isUrdu && obj[key + "_ur"]) || obj[key + "_en"];
+
+    els.madinahView.classList.toggle("urdu-view", isUrdu);
+    els.madinahTitle.textContent = pick(MADINAH_GUIDE, "title");
+    els.madinahIntro.textContent = pick(MADINAH_GUIDE, "intro");
+    [els.madinahTitle, els.madinahIntro].forEach((el) => {
+      el.setAttribute("dir", isUrdu ? "rtl" : "ltr");
+      el.setAttribute("lang", isUrdu ? "ur" : "en");
     });
+    els.madinahSections.innerHTML = "";
+
+    MADINAH_GUIDE.sections.forEach((section) => {
+      const sectionEl = document.createElement("section");
+      sectionEl.className = "madinah-section";
+      sectionEl.setAttribute("dir", isUrdu ? "rtl" : "ltr");
+      sectionEl.setAttribute("lang", isUrdu ? "ur" : "en");
+
+      const heading = document.createElement("h3");
+      heading.className = "madinah-section-heading";
+      heading.textContent = pick(section, "title");
+      sectionEl.appendChild(heading);
+
+      section.items.forEach((item) => {
+        const details = document.createElement("details");
+        details.className = "madinah-item";
+        details.open = openMadinahItems.has(item.id);
+        details.addEventListener("toggle", () => {
+          if (details.open) openMadinahItems.add(item.id);
+          else openMadinahItems.delete(item.id);
+        });
+
+        const summary = document.createElement("summary");
+        const summaryTitle = document.createElement("span");
+        summaryTitle.className = "madinah-item-title";
+        summaryTitle.textContent = pick(item, "title");
+        summary.appendChild(summaryTitle);
+        const subtitle = pick(item, "subtitle");
+        if (subtitle) {
+          const summarySub = document.createElement("span");
+          summarySub.className = "madinah-item-subtitle";
+          summarySub.textContent = subtitle;
+          summary.appendChild(summarySub);
+        }
+        details.appendChild(summary);
+
+        const body = document.createElement("div");
+        body.className = "madinah-item-body";
+
+        const steps = (isUrdu && item.steps_ur && item.steps_ur.length ? item.steps_ur : item.steps_en) || [];
+        if (steps.length) {
+          const stepsHeading = document.createElement("h4");
+          stepsHeading.className = "madinah-label";
+          stepsHeading.textContent = labels.steps;
+          body.appendChild(stepsHeading);
+          const list = document.createElement("ul");
+          list.className = "madinah-steps";
+          steps.forEach((step) => {
+            const li = document.createElement("li");
+            li.textContent = step;
+            list.appendChild(li);
+          });
+          body.appendChild(list);
+        }
+
+        const note = pick(item, "note");
+        if (note) {
+          const noteEl = document.createElement("p");
+          noteEl.className = "madinah-note";
+          const strong = document.createElement("strong");
+          strong.textContent = labels.note + ": ";
+          noteEl.appendChild(strong);
+          noteEl.appendChild(document.createTextNode(note));
+          body.appendChild(noteEl);
+        }
+
+        if (item.duas && item.duas.length) {
+          const duasHeading = document.createElement("h4");
+          duasHeading.className = "madinah-label";
+          duasHeading.textContent = labels.duas;
+          body.appendChild(duasHeading);
+          item.duas.forEach((dua) => {
+            const article = buildDuaArticle(dua);
+            // Each part of the card sets its own direction; don't inherit the section's.
+            article.setAttribute("dir", "ltr");
+            body.appendChild(article);
+          });
+        }
+
+        details.appendChild(body);
+        sectionEl.appendChild(details);
+      });
+
+      els.madinahSections.appendChild(sectionEl);
+    });
+  }
+
+  function renderViewTabs() {
+    const labels = TAB_LABELS[state.language] || TAB_LABELS.english;
+    els.viewTabs.forEach((tab) => {
+      const isActive = tab.dataset.view === state.view;
+      tab.classList.toggle("active", isActive);
+      tab.setAttribute("aria-selected", isActive ? "true" : "false");
+      tab.textContent = labels[tab.dataset.view];
+    });
+  }
+
+  function setView(view) {
+    state.view = view === "madinah" ? "madinah" : "tawaaf";
+    const onMadinah = state.view === "madinah";
+    els.madinahView.classList.toggle("hidden", !onMadinah);
+    els.duaView.classList.toggle("hidden", onMadinah || state.complete);
+    els.completeView.classList.toggle("hidden", onMadinah || !state.complete);
+    // The PDFs only cover the tawaaf duas.
+    if (els.pdfLink) els.pdfLink.classList.toggle("hidden", onMadinah);
+    document.title = PAGE_TITLES[state.view];
+    renderViewTabs();
+    if (onMadinah) renderMadinah();
+    window.scrollTo({ top: 0 });
+  }
+
+  function viewFromHash() {
+    return window.location.hash === "#madinah" ? "madinah" : "tawaaf";
   }
 
   function goNext() {
@@ -183,12 +355,14 @@
   }
 
   function showComplete() {
+    state.complete = true;
     els.duaView.classList.add("hidden");
     els.completeView.classList.remove("hidden");
   }
 
   function reset() {
     state.round = 1;
+    state.complete = false;
     els.completeView.classList.add("hidden");
     els.duaView.classList.remove("hidden");
     render();
@@ -222,6 +396,8 @@
     }
     render();
     renderCompleteLabels();
+    renderViewTabs();
+    if (state.view === "madinah") renderMadinah();
   }
 
   function initTheme() {
@@ -258,7 +434,10 @@
     btn.addEventListener("click", () => setLanguage(btn.dataset.lang));
   });
 
+  window.addEventListener("hashchange", () => setView(viewFromHash()));
+
   initTheme();
   render();
   renderCompleteLabels();
+  setView(viewFromHash());
 })();
