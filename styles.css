@@ -251,6 +251,10 @@ body {
   font-style: italic;
 }
 
+.dua-translation.urdu:empty::before {
+  content: "(ترجمہ یہاں آئے گا)";
+}
+
 .dua-translation.urdu {
   font-family: "Noto Nastaliq Urdu", serif;
   font-size: 1.4rem;
