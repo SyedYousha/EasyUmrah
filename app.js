@@ -48,8 +48,8 @@
   };
 
   const MADINAH_LABELS = {
-    english: { steps: "What to do", duas: "Duas", note: "Note" },
-    urdu: { steps: "کیا کریں", duas: "دعائیں", note: "نوٹ" }
+    english: { significance: "Significance", steps: "What to do", duas: "Duas", note: "Note" },
+    urdu: { significance: "اہمیت", steps: "کیا کریں", duas: "دعائیں", note: "نوٹ" }
   };
 
   const PAGE_TITLES = {
@@ -261,6 +261,18 @@
 
         const body = document.createElement("div");
         body.className = "madinah-item-body";
+
+        const significance = pick(item, "significance");
+        if (significance) {
+          const sigHeading = document.createElement("h4");
+          sigHeading.className = "madinah-label";
+          sigHeading.textContent = labels.significance;
+          body.appendChild(sigHeading);
+          const sigEl = document.createElement("div");
+          sigEl.className = "madinah-significance";
+          renderParagraphs(sigEl, significance);
+          body.appendChild(sigEl);
+        }
 
         const steps = (isUrdu && item.steps_ur && item.steps_ur.length ? item.steps_ur : item.steps_en) || [];
         if (steps.length) {
